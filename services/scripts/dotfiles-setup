@@ -1,8 +1,6 @@
 #!/bin/sh
 set -euo pipefail
 
-git config --global --replace-all credential.helper 'store --file=/run/agenix/service/github/credentials'
-
 update_repo() {
     local repo_dir=$1
     local repo_url=$2

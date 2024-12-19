@@ -9,6 +9,7 @@
   environment.systemPackages = with pkgs; [
     bc
     file
+    gnupg
     ncdu
     numlockx
     python3

@@ -1,8 +1,6 @@
 { pkgs, ... }:
 
 {
-  imports = [ ../roles/github.nix ];
-
   environment.etc = {
     "nebula/scripts/initial-setup".text = builtins.readFile ./scripts/initial-setup;
     "nebula/scripts/directory-setup".text = builtins.readFile ./scripts/directory-setup;
