@@ -77,11 +77,11 @@
         "rev": "f2cb64d3bcd2b7fb8e472bf40caadb7ffce16db9",
         "revCount": 105,
         "type": "git",
-        "url": "file:/home/monu/Desktop/nixos-config-secrets"
+        "url": "ssh://git@github.com/parveshdhull/nixos-config-secrets"
       },
       "original": {
         "type": "git",
-        "url": "file:/home/monu/Desktop/nixos-config-secrets"
+        "url": "ssh://git@github.com/parveshdhull/nixos-config-secrets"
       }
     },
     "systems": {

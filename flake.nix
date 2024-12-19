@@ -7,7 +7,7 @@
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
     secrets = {
-      url = "git+file:/home/monu/Desktop/nixos-config-secrets";
+      url = "git+ssh://git@github.com/parveshdhull/nixos-config-secrets";
       flake = false;
     };
     agenix = {

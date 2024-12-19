@@ -15,9 +15,9 @@ update_repo() {
 
 # Dotfiles
 DOTFILES_DIR="/mnt/data/nebula/dotfiles"
-update_repo "$DOTFILES_DIR" "https://github.com/Parveshdhull/dotfiles"
+update_repo "$DOTFILES_DIR" "git@github.com:parveshdhull/dotfiles"
 stow --adopt -d "$DOTFILES_DIR" -t /home/monu -S .
 
 # NixOS Config
 NIXOS_DIR="/mnt/data/nebula/nixos-config"
-update_repo "$NIXOS_DIR" "https://github.com/Parveshdhull/nixos-config"
+update_repo "$NIXOS_DIR" "git@github.com:parveshdhull/nixos-config"
