@@ -1,0 +1,7 @@
+#!/bin/sh
+set -euo pipefail
+
+# Create 'nebula' directory structure
+mkdir -p /mnt/data
+mkdir -p /home/monu/.config
+mkdir -p /mnt/data/nebula/{sync,dotfiles,nixos-config}

@@ -1,0 +1,5 @@
+#!/bin/sh
+set -euo pipefail
+
+bash /etc/nebula/scripts/directory-setup # Initialize nebula directory in home
+bash /etc/nebula/scripts/dotfiles-setup  # Setup dotfiles

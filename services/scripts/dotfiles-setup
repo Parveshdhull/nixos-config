@@ -1,0 +1,25 @@
+#!/bin/sh
+set -euo pipefail
+
+git config --global --replace-all credential.helper 'store --file=/run/agenix/service/github/credentials'
+
+update_repo() {
+    local repo_dir=$1
+    local repo_url=$2
+    cd "$repo_dir"
+
+    if [ ! -d "$repo_dir/.git" ]; then
+        git clone "$repo_url" "$repo_dir"
+    else
+        git pull origin main
+    fi
+}
+
+# Dotfiles
+DOTFILES_DIR="/mnt/data/nebula/dotfiles"
+update_repo "$DOTFILES_DIR" "https://github.com/Parveshdhull/dotfiles"
+stow --adopt -d "$DOTFILES_DIR" -t /home/monu -S .
+
+# NixOS Config
+NIXOS_DIR="/mnt/data/nebula/nixos-config"
+update_repo "$NIXOS_DIR" "https://github.com/Parveshdhull/nixos-config"

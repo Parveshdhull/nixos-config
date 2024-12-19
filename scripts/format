@@ -1,0 +1,4 @@
+#!/bin/sh
+set -euo pipefail
+
+find -name '*.nix' | xargs nix run --extra-experimental-features nix-command --extra-experimental-features flakes nixpkgs#nixfmt-rfc-style

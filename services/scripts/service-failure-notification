@@ -1,0 +1,21 @@
+#!/bin/bash
+set -euo pipefail
+
+EMAIL_RECIPIENT="git.hrca@gmail.com"
+NOTIFICATION_DIR="/tmp/run/service_notifications"
+CURRENT_DATE=$(date +%F)
+
+mkdir -p "$NOTIFICATION_DIR"
+
+FAILED_SERVICES=$(systemctl --failed | awk '/\.service/ {print $2}')
+
+echo "$FAILED_SERVICES" | while read -r SERVICE_NAME; do
+	SERVICE_LOG_FILE="$NOTIFICATION_DIR/$(echo "$SERVICE_NAME" | sed 's/\//_/g').log"
+
+	if [ ! -f "$SERVICE_LOG_FILE" ] || [ "$(cat "$SERVICE_LOG_FILE")" != "$CURRENT_DATE" ]; then
+		MESSAGE="Subject: Service Failure Notification\n\nThe service '$SERVICE_NAME' has failed."
+		echo -e "$MESSAGE" | msmtp "$EMAIL_RECIPIENT"
+
+		echo "$CURRENT_DATE" >"$SERVICE_LOG_FILE"
+	fi
+done
