@@ -2,18 +2,19 @@
   pkgs,
   config,
   secret,
+  secrets,
   ...
 }:
 
 let
   inherit (config.networking) hostName;
 
-  serverAddress = (import ../secrets/config).server-ip;
-  serverPort = (import ../secrets/config/ports.nix).wireguard;
+  serverAddress = (import "${secrets}/config").server-ip;
+  serverPort = (import "${secrets}/config/ports.nix").wireguard;
   routeAddress = "192.168.1.1";
   interfaceName = "enp7s0";
 
-  hosts = import ../secrets/config/hosts.nix;
+  hosts = import "${secrets}/config/hosts.nix";
   ip = hosts.${hostName};
 in
 {
@@ -29,7 +30,7 @@ in
       postSetup = "ip link show ${interfaceName} &> /dev/null && ip route add ${serverAddress} via ${routeAddress} dev ${interfaceName} || true";
       peers = [
         {
-          publicKey = (import ../secrets/keys).wireguard-altair; # Altair
+          publicKey = (import "${secrets}/keys").wireguard-altair; # Altair
           allowedIPs = [
             hosts.altair
             hosts.nova
@@ -47,6 +48,6 @@ in
   };
 
   age.secrets."service/wireguard.${hostName}" = {
-    file = ../secrets/agenix/service/wireguard/${hostName}.age;
+    file = "${secrets}/agenix/service/wireguard/${hostName}.age";
   };
 }

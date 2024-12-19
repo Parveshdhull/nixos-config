@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, secrets, ... }:
 {
   # Printing setup
   services.printing.enable = true;
@@ -9,7 +9,7 @@
       {
         name = "Brother_DCP-T820DW";
         location = "Home";
-        deviceUri = "usb://Brother/DCP-T820DW?serial=${(import ../secrets/config).printer-serial}";
+        deviceUri = "usb://Brother/DCP-T820DW?serial=${(import "${secrets}/config").printer-serial}";
         model = "brother_dcpt725dw_printer_en.ppd";
         ppdOptions = {
           PageSize = "A4";

@@ -3,11 +3,12 @@
   lib,
   pkgs,
   secret,
+  secrets,
   ...
 }:
 let
   inherit (config.networking) hostName;
-  ports = import ../secrets/config/ports.nix;
+  ports = import "${secrets}/config/ports.nix";
 in
 {
   services.homepage-dashboard = {

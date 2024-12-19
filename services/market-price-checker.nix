@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, secrets, ... }:
 
 {
   age.secrets = {
     "service/market-price-checker/assets" = {
-      file = ../secrets/agenix/service/market-price-checker/assets.age;
+      file = "${secrets}/agenix/service/market-price-checker/assets.age";
       mode = "644";
     };
   };

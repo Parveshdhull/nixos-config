@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  secrets,
+  ...
+}:
 
 {
   imports = [
@@ -9,7 +14,7 @@
     ./security.nix
     ./syncthing.nix
     ./users.nix
-    ../secrets/config/env.nix
+    "${secrets}/config/env.nix"
     ../services/initial-setup.nix
   ];
 

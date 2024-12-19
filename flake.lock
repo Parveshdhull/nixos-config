@@ -64,7 +64,24 @@
         "agenix": "agenix",
         "disko": "disko",
         "nixpkgs": "nixpkgs",
+        "secrets": "secrets",
         "unstable": "unstable"
+      }
+    },
+    "secrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1734629707,
+        "narHash": "sha256-bl1rr6xhOALFANsQMzEcoc/SRrxPTLg0O1lEskBgUMI=",
+        "ref": "refs/heads/main",
+        "rev": "f2cb64d3bcd2b7fb8e472bf40caadb7ffce16db9",
+        "revCount": 105,
+        "type": "git",
+        "url": "file:/home/monu/Desktop/nixos-config-secrets"
+      },
+      "original": {
+        "type": "git",
+        "url": "file:/home/monu/Desktop/nixos-config-secrets"
       }
     },
     "systems": {

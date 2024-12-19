@@ -2,10 +2,11 @@
   config,
   lib,
   pkgs,
+  secrets,
   ...
 }:
 let
-  keys = import ../secrets/keys;
+  keys = import "${secrets}/keys";
 in
 {
   options.syncthing = {
@@ -45,8 +46,8 @@ in
       notThisHost = h: h != hostName;
       otherHosts = builtins.filter notThisHost (lib.attrNames config.syncthing.hosts);
       inherit (config) services;
-      hosts = import ../secrets/config/hosts.nix;
-      port = toString (import ../secrets/config/ports.nix).syncthing;
+      hosts = import "${secrets}/config/hosts.nix";
+      port = toString (import "${secrets}/config/ports.nix").syncthing;
 
       guiAddress = "${hosts.${hostName}}:${port}";
 
@@ -89,7 +90,7 @@ in
         settings = {
           gui = {
             user = "monu";
-            password = (import ../secrets/config).syncthing-password;
+            password = (import "${secrets}/config").syncthing-password;
           };
           devices = lib.filterAttrs (h: _: notThisHost h) config.syncthing.hosts;
           inherit folders;

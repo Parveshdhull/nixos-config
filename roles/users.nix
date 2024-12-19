@@ -2,11 +2,12 @@
   pkgs,
   config,
   secret,
+  secrets,
   ...
 }:
 
 let
-  users = import ../secrets/keys/users;
+  users = import "${secrets}/keys/users";
   sshKeys = [
     users.orion
     users.sirius
@@ -14,7 +15,7 @@ let
 in
 {
   age.secrets."hosts/users/monu/pass-hash" = {
-    file = ../secrets/agenix/hosts/users/monu/pass-hash.age;
+    file = "${secrets}/agenix/hosts/users/monu/pass-hash.age";
   };
 
   # Give extra permissions with Nix

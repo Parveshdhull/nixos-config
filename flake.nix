@@ -6,6 +6,10 @@
     unstable.url = "nixpkgs/nixos-unstable";
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
+    secrets = {
+      url = "git+file:/home/monu/Desktop/nixos-config-secrets";
+      flake = false;
+    };
     agenix = {
       url = "github:ryantm/agenix";
       inputs = {
@@ -22,6 +26,7 @@
       nixpkgs,
       unstable,
       disko,
+      secrets,
       agenix,
     }:
     let
@@ -59,8 +64,11 @@
           name = hostname;
           value = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
-            specialArgs.channels = {
-              inherit nixpkgs unstable agenix;
+            specialArgs = {
+              channels = {
+                inherit nixpkgs unstable agenix;
+              };
+              inherit secrets;
             };
             modules = [
               overlayModule

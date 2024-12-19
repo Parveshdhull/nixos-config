@@ -2,11 +2,12 @@
   pkgs,
   config,
   secret,
+  secrets,
   ...
 }:
 
 let
-  hosts = import ../secrets/config/hosts.nix;
+  hosts = import "${secrets}/config/hosts.nix";
 in
 {
   environment.systemPackages = with pkgs; [

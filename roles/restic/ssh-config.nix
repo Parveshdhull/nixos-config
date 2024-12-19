@@ -1,6 +1,11 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  config,
+  secrets,
+  ...
+}:
 let
-  inherit (import ../../secrets/config) storagebox-user;
+  inherit (import "${secrets}/config") storagebox-user;
 in
 {
   programs.ssh = {
@@ -12,7 +17,7 @@ in
          Identityfile /mnt/secrets/keys/storagebox
     '';
     knownHosts = {
-      "${storagebox-user}.your-storagebox.de".publicKey = (import ../../secrets/keys).storagebox;
+      "${storagebox-user}.your-storagebox.de".publicKey = (import "${secrets}/keys").storagebox;
     };
   };
 }

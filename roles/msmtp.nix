@@ -2,13 +2,14 @@
   lib,
   pkgs,
   secret,
+  secrets,
   ...
 }:
 
 {
   age.secrets = {
     "service/msmtp/credential" = {
-      file = ../secrets/agenix/service/msmtp/credential.age;
+      file = "${secrets}/agenix/service/msmtp/credential.age";
       mode = "644";
     };
   };
