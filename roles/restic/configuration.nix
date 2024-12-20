@@ -7,7 +7,6 @@
 
 {
   imports = [
-    ./ssh-config.nix
     ./age-secrets.nix
   ];
 

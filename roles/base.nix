@@ -12,6 +12,7 @@
     ./homepage.nix
     ./networking.nix
     ./security.nix
+    ./ssh-config.nix
     ./syncthing.nix
     ./users.nix
     "${secrets}/config/env.nix"
