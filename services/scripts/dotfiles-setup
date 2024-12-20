@@ -1,6 +1,14 @@
 #!/bin/sh
 set -euo pipefail
 
+current_hostname=$(hostname)
+
+if [ "$current_hostname" = "nova" ]; then
+    GIT_PROTOCOL="git@github.com:"
+else
+    GIT_PROTOCOL="https://github.com/"
+fi
+
 update_repo() {
     local repo_dir=$1
     local repo_url=$2
@@ -13,11 +21,8 @@ update_repo() {
     fi
 }
 
-# Dotfiles
 DOTFILES_DIR="/mnt/data/nebula/dotfiles"
-update_repo "$DOTFILES_DIR" "git@github.com:parveshdhull/dotfiles"
-stow --adopt -d "$DOTFILES_DIR" -t /home/monu -S .
+update_repo "$DOTFILES_DIR" "${GIT_PROTOCOL}parveshdhull/dotfiles"
 
-# NixOS Config
 NIXOS_DIR="/mnt/data/nebula/nixos-config"
-update_repo "$NIXOS_DIR" "git@github.com:parveshdhull/nixos-config"
+update_repo "$NIXOS_DIR" "${GIT_PROTOCOL}parveshdhull/nixos-config"

@@ -17,6 +17,7 @@
     path = [
       pkgs.bash
       pkgs.git
+      pkgs.hostname
       pkgs.openssh
       pkgs.stow
     ];
