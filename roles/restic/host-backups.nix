@@ -25,20 +25,20 @@ let
       };
       "nebula-local" = makeBackup {
         repository = storageConfig.storagebox-nova;
-        time = "14:00";
         name = "nebula";
+        time = "14:00";
         paths = [ "/mnt/data/nebula/" ];
       };
       "mega" = makeBackup {
         repository = storageConfig.storagebox-mega;
-        time = "14:00";
         name = "mega";
+        time = "14:00";
         paths = [
           "/mnt/data/nebula/important/creds"
           "/mnt/data/nebula/sync/sync-box/creds/"
         ];
         passwordFile = secret "service/restic/pass-mega";
-        extraOptions = [ "rclone.program='rclone --config ${secret "service/rclone/conf"}'" ];
+        rcloneConfigFile = secret "service/rclone/conf";
       };
     };
     "luna" = {
@@ -78,29 +78,29 @@ let
         time = "02:00";
         paths = [ "/mnt/data/calibre" ];
       };
-      "audiobookshelf" = makeBackup {
-        repository = storageConfig.storagebox;
-        name = "audiobookshelf";
-        time = "03:00";
-        paths = [ "/var/lib/audiobookshelf" ];
-      };
-      "audiobookshelf-local" = makeBackup {
-        repository = storageConfig.storagebox-luna;
-        name = "audiobookshelf";
-        time = "03:00";
-        paths = [ "/var/lib/audiobookshelf" ];
-      };
       "calibre-web" = makeBackup {
         repository = storageConfig.storagebox;
         name = "calibre-web";
-        time = "04:00";
+        time = "03:00";
         paths = [ "/var/lib/calibre-web" ];
       };
       "calibre-web-local" = makeBackup {
         repository = storageConfig.storagebox-luna;
         name = "calibre-web";
-        time = "04:00";
+        time = "03:00";
         paths = [ "/var/lib/calibre-web" ];
+      };
+      "audiobookshelf" = makeBackup {
+        repository = storageConfig.storagebox;
+        name = "audiobookshelf";
+        time = "04:00";
+        paths = [ "/var/lib/audiobookshelf" ];
+      };
+      "audiobookshelf-local" = makeBackup {
+        repository = storageConfig.storagebox-luna;
+        name = "audiobookshelf";
+        time = "04:00";
+        paths = [ "/var/lib/audiobookshelf" ];
       };
     };
   };

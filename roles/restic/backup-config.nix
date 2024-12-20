@@ -3,18 +3,18 @@
 {
   makeBackup =
     {
-      extraOptions ? [ ],
       repository,
       name,
-      passwordFile ? secret "service/restic/pass",
-      paths,
       time,
+      paths,
+      passwordFile ? secret "service/restic/pass",
+      rcloneConfigFile ? null,
     }:
     {
-      inherit extraOptions;
       inherit passwordFile;
       inherit paths;
       inherit repository;
+      inherit rcloneConfigFile;
       user = "monu";
       initialize = true;
       extraBackupArgs = [ "--tag=${name}" ];
