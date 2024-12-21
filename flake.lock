@@ -30,11 +30,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1734343412,
-        "narHash": "sha256-b7G8oFp0Nj01BYUJ6ENC9Qf/HsYAIZvN9k/p0Kg/PFU=",
+        "lastModified": 1734701201,
+        "narHash": "sha256-hk0roBX10j/hospoWIJIJj3i2skd7Oml6yKQBx7mTFk=",
         "owner": "nix-community",
         "repo": "disko",
-        "rev": "a08bfe06b39e94eec98dd089a2c1b18af01fef19",
+        "rev": "2ee76c861af3b895b3b104bae04777b61397485b",
         "type": "github"
       },
       "original": {
@@ -71,11 +71,11 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1734629707,
-        "narHash": "sha256-bl1rr6xhOALFANsQMzEcoc/SRrxPTLg0O1lEskBgUMI=",
+        "lastModified": 1734793935,
+        "narHash": "sha256-OkeVokoznjDufwgobp23QoqhQf45JpZovElHM54SXUo=",
         "ref": "refs/heads/main",
-        "rev": "f2cb64d3bcd2b7fb8e472bf40caadb7ffce16db9",
-        "revCount": 105,
+        "rev": "00150f7e43be71ae5f2fd5cb877aac748f6ee1ce",
+        "revCount": 106,
         "type": "git",
         "url": "ssh://git@github.com/parveshdhull/nixos-config-secrets"
       },
