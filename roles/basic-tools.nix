@@ -10,6 +10,7 @@
     bc
     file
     gnupg
+    imagemagick
     ncdu
     numlockx
     python3

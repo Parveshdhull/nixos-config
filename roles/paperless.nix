@@ -21,6 +21,9 @@
     dataDir = "/mnt/data/paperless";
     settings = {
       PAPERLESS_ADMIN_USER = "monu";
+      PAPERLESS_OCR_USER_ARGS = {
+        invalidate_digital_signatures = true;
+      };
     };
     user = "monu";
   };

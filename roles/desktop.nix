@@ -23,11 +23,11 @@
     flameshot
     firefox
     gparted
-    zenity # Show popups and calendar
     gnucash
     keepassxc
     libreoffice
     networkmanagerapplet
+    pdftk # PDF Toolkit - Combine etc.
     playerctl # Change songs on Spotify
     portfolio
     qrencode
@@ -48,6 +48,7 @@
     xdotool # Required for keybinding
     xorg.xkill
     xorg.xmodmap # Required for emoji keyboard
+    zenity # Show popups and calendar
   ];
 
   # Emacs setup
