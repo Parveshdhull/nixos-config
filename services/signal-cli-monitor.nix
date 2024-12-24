@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, secrets, ... }:
 
 {
   environment.etc = {
@@ -12,6 +12,9 @@
       pkgs.unstable.signal-cli
     ];
     after = [ "initial-setup.service" ];
+    environment = {
+      EMAIL_RECIPIENT = (import "${secrets}/config").email-recipient;
+    };
     onFailure = [ "service-failure-notification.service" ];
     serviceConfig = {
       ExecStart = "/run/current-system/sw/bin/bash  /etc/nebula/scripts/signal-cli-monitor";

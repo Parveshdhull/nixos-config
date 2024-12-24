@@ -6,5 +6,5 @@ signal-cli receive
 
 # Check the list of groups
 if [ $(signal-cli listGroups 2>&1 | grep -c 'Alertbot') -ne 1 ]; then
-	echo -e "To: git.hrca@gmail.com\nSubject: Error\n\nSignal list groups don't have Alertbot" | msmtp -t
+	echo -e "To: $EMAIL_RECIPIENT\nSubject: Error\n\nSignal list groups don't have Alertbot" | msmtp -t
 fi

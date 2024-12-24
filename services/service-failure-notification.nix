@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, secrets, ... }:
 
 {
   environment.etc = {
@@ -12,6 +12,9 @@
       pkgs.msmtp
       pkgs.gawk
     ];
+    environment = {
+      EMAIL_RECIPIENT = (import "${secrets}/config").email-recipient;
+    };
     serviceConfig = {
       ExecStart = "/run/current-system/sw/bin/bash /etc/nebula/scripts/service-failure-notification";
     };

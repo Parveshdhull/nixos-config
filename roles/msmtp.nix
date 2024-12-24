@@ -5,7 +5,9 @@
   secrets,
   ...
 }:
-
+let
+  emailAddress = (import "${secrets}/config").email-recipient;
+in
 {
   age.secrets = {
     "service/msmtp/credential" = {
@@ -19,8 +21,8 @@
     accounts.default = {
       auth = "on";
       tls = "on";
-      from = "git.hrca@gmail.com";
-      user = "git.hrca@gmail.com";
+      from = emailAddress;
+      user = emailAddress;
       host = "smtp.gmail.com";
       port = "587";
       passwordeval = "cat ${secret "service/msmtp/credential"}";

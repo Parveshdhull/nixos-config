@@ -8,6 +8,7 @@
 {
   imports = [
     ./age-secrets.nix
+    ../../services/check-restic-backups.nix
   ];
 
   users.users.monu.packages = [ pkgs.restic ];

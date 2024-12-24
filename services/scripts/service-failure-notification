@@ -1,7 +1,6 @@
 #!/bin/bash
 set -euo pipefail
 
-EMAIL_RECIPIENT="git.hrca@gmail.com"
 NOTIFICATION_DIR="/tmp/run/service_notifications"
 CURRENT_DATE=$(date +%F)
 

@@ -6,7 +6,6 @@
     ./hardware-configuration.nix
     ../../roles/base.nix
     ../../roles/janitor.nix
-    ../../roles/msmtp.nix
     ../../roles/signal-cli.nix
     ../../roles/ssh.nix
     ../../roles/wireguard-server.nix
