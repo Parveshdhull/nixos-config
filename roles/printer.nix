@@ -1,8 +1,24 @@
 { pkgs, secrets, ... }:
 {
+  users.users.monu = {
+    packages = [ pkgs.simple-scan ];
+    extraGroups = [
+      "scanner"
+      "lp"
+    ];
+  };
+
   # Printing setup
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.unstable.cups-brother-dcpt725dw ];
+
+  # Scanner
+  hardware = {
+    sane = {
+      enable = true;
+      brscan4.enable = true;
+    };
+  };
 
   hardware.printers = {
     ensurePrinters = [

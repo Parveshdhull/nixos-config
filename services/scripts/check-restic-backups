@@ -38,6 +38,8 @@ for REPO in "${REPOSITORIES[@]}"; do
     echo "[INFO] Using rclone config: /run/agenix/service/rclone/conf"
   fi
 
+  restic -r "$REPO_PATH"  --password-file "$PASSWORD_FILE" unlock
+
   if ! restic -r "$REPO_PATH" --password-file "$PASSWORD_FILE" snapshots | grep -q "$TODAY"; then
     echo "[WARNING] No backup taken today for $REPO_PATH"
     echo -e "Subject: Restic Backup Alert - $HOSTNAME\n\nNo backup taken today for $REPO_PATH!" | msmtp "$EMAIL_RECIPIENT"
