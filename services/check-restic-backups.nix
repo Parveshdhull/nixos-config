@@ -33,7 +33,6 @@
     description = "Run Check Restic Backups daily at 5 PM";
     timerConfig = {
       OnCalendar = "17:00";
-      Persistent = true;
       Unit = "check-restic-backups.service";
     };
     wantedBy = [ "timers.target" ];

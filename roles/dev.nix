@@ -5,5 +5,6 @@
     android-studio
     android-tools
     gnumake
+    tmux
   ];
 }
