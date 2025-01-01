@@ -5,7 +5,7 @@
   secrets,
 }:
 let
-  emailRecipient = (import "${secrets}/config").email-recipient;
+  myEmailAddress = (import "${secrets}/config").my-email-address;
 in
 {
   makeBackup =
@@ -36,6 +36,6 @@ in
         Persistent = true;
       };
       backupPrepareCommand = "${pkgs.restic}/bin/restic unlock --repo ${repository} --password-file ${passwordFile}";
-      backupCleanupCommand = "/run/current-system/sw/bin/bash /etc/nebula/scripts/check-restic-backup ${repository} ${passwordFile} ${emailRecipient}";
+      backupCleanupCommand = "/run/current-system/sw/bin/bash /etc/nebula/scripts/check-restic-backup ${repository} ${passwordFile} ${myEmailAddress}";
     };
 }

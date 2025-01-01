@@ -13,7 +13,7 @@ echo "$FAILED_SERVICES" | while read -r SERVICE_NAME; do
 
 	if [ ! -f "$SERVICE_LOG_FILE" ] || [ "$(cat "$SERVICE_LOG_FILE")" != "$CURRENT_DATE" ]; then
 		MESSAGE="Subject: Service Failure Notification\n\nThe service '$SERVICE_NAME' has failed."
-		echo -e "$MESSAGE" | msmtp "$EMAIL_RECIPIENT"
+		echo -e "$MESSAGE" | msmtp "$MY_EMAIL_ADDRESS"
 
 		echo "$CURRENT_DATE" >"$SERVICE_LOG_FILE"
 	fi

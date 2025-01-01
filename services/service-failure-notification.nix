@@ -13,7 +13,7 @@
       pkgs.gawk
     ];
     environment = {
-      EMAIL_RECIPIENT = (import "${secrets}/config").email-recipient;
+      MY_EMAIL_ADDRESS = (import "${secrets}/config").my-email-address;
     };
     serviceConfig = {
       ExecStart = "/run/current-system/sw/bin/bash /etc/nebula/scripts/service-failure-notification";

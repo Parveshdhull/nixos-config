@@ -13,7 +13,7 @@
     ];
     after = [ "initial-setup.service" ];
     environment = {
-      EMAIL_RECIPIENT = (import "${secrets}/config").email-recipient;
+      MY_EMAIL_ADDRESS = (import "${secrets}/config").my-email-address;
     };
     onFailure = [ "service-failure-notification.service" ];
     serviceConfig = {
