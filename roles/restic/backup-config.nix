@@ -1,5 +1,12 @@
 # Define the makeBackup function
-{ pkgs, secret }:
+{
+  pkgs,
+  secret,
+  secrets,
+}:
+let
+  emailRecipient = (import "${secrets}/config").email-recipient;
+in
 {
   makeBackup =
     {
@@ -24,12 +31,11 @@
         "--keep-monthly 12"
         "--keep-yearly 3"
       ];
-      runCheck = true;
-      checkOpts = [ "--read-data-subset=1%" ];
       timerConfig = {
         OnCalendar = time;
         Persistent = true;
       };
       backupPrepareCommand = "${pkgs.restic}/bin/restic unlock --repo ${repository} --password-file ${passwordFile}";
+      backupCleanupCommand = "/run/current-system/sw/bin/bash /etc/nebula/scripts/check-restic-backup ${repository} ${passwordFile} ${emailRecipient}";
     };
 }

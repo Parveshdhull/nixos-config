@@ -2,14 +2,16 @@
   pkgs,
   config,
   secret,
+  secrets,
   ...
 }:
 
 let
   inherit
     (import ./backup-config.nix {
-      inherit secret;
       inherit pkgs;
+      inherit secret;
+      inherit secrets;
     })
     makeBackup
     ;
