@@ -16,7 +16,7 @@
       MY_EMAIL_ADDRESS = (import "${secrets}/config").my-email-address;
     };
     serviceConfig = {
-      ExecStart = "/run/current-system/sw/bin/bash /etc/nebula/scripts/service-failure-notification";
+      ExecStart = "${pkgs.bash}/bin/bash /etc/nebula/scripts/service-failure-notification";
     };
     wantedBy = [ "multi-user.target" ];
   };

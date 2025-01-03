@@ -21,7 +21,7 @@
     ];
     onFailure = [ "service-failure-notification.service" ];
     serviceConfig = {
-      ExecStart = "/run/current-system/sw/bin/bash /home/monu/bin/market-price-checker";
+      ExecStart = "${pkgs.bash}/bin/bash /home/monu/bin/market-price-checker";
       User = "monu";
       StandardOutput = "journal";
       StandardError = "inherit";

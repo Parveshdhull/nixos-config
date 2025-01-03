@@ -17,7 +17,7 @@
     };
     onFailure = [ "service-failure-notification.service" ];
     serviceConfig = {
-      ExecStart = "/run/current-system/sw/bin/bash  /etc/nebula/scripts/signal-cli-monitor";
+      ExecStart = "${pkgs.bash}/bin/bash  /etc/nebula/scripts/signal-cli-monitor";
       User = "monu";
       StandardOutput = "journal";
       StandardError = "inherit";

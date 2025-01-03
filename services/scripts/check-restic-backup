@@ -10,7 +10,6 @@ MY_EMAIL_ADDRESS="$3"
 TODAY=$(date +%Y-%m-%d)
 HOSTNAME=$(hostname)
 
-# Log the information in a single line
 echo "Hostname: $HOSTNAME, Repository: $REPO_PATH, Date: $TODAY"
 
 # Check if repository, password, and email parameters are provided
@@ -24,12 +23,8 @@ if [[ "$REPO_PATH" == rclone:* ]]; then
   export RCLONE_CONFIG=/run/agenix/service/rclone/conf
 fi
 
-# Unlock the repository
-if ! restic -r "$REPO_PATH" --password-file "$PASSWORD_FILE" unlock; then
-  echo "[ERROR] Failed to unlock repository: $REPO_PATH"
-  echo -e "Subject: Restic Repository Unlock Failed - $HOSTNAME\n\nFailed to unlock repository: $REPO_PATH" | msmtp "$MY_EMAIL_ADDRESS"
-  exit 1
-fi
+# Unlock the repository if locked
+restic -r "$REPO_PATH" --password-file "$PASSWORD_FILE" unlock
 
 # Check if backup was taken today
 if ! restic -r "$REPO_PATH" --password-file "$PASSWORD_FILE" snapshots | grep -q "$TODAY"; then
@@ -38,7 +33,7 @@ if ! restic -r "$REPO_PATH" --password-file "$PASSWORD_FILE" snapshots | grep -q
 fi
 
 # Check the repository integrity
-if ! restic -r "$REPO_PATH" --password-file "$PASSWORD_FILE" check --read-data-subset=1%; then
+if ! restic -r "$REPO_PATH" --password-file "$PASSWORD_FILE" check --read-data-subset=0.1% --no-lock --no-cache; then
   echo "[ERROR] Repository $REPO_PATH failed the integrity check"
   echo -e "Subject: Restic Repository Health Alert - $HOSTNAME\n\nRepository $REPO_PATH failed the integrity check!" | msmtp "$MY_EMAIL_ADDRESS"
 fi

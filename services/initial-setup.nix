@@ -22,7 +22,7 @@
       pkgs.stow
     ];
     serviceConfig = {
-      ExecStart = "/run/current-system/sw/bin/bash /etc/nebula/scripts/initial-setup";
+      ExecStart = "${pkgs.bash}/bin/bash /etc/nebula/scripts/initial-setup";
       User = "monu";
     };
     wantedBy = [ "multi-user.target" ];

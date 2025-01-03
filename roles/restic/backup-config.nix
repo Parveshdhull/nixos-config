@@ -36,6 +36,6 @@ in
         Persistent = true;
       };
       backupPrepareCommand = "${pkgs.restic}/bin/restic unlock --repo ${repository} --password-file ${passwordFile}";
-      backupCleanupCommand = "/run/current-system/sw/bin/bash /etc/nebula/scripts/check-restic-backup ${repository} ${passwordFile} ${myEmailAddress}";
+      backupCleanupCommand = "${pkgs.bash}/bin/bash /etc/nebula/scripts/check-restic-backup ${repository} ${passwordFile} ${myEmailAddress}";
     };
 }
