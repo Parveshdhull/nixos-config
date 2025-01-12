@@ -20,7 +20,9 @@ in
     # Firewall
     firewall = {
       # Open firewall for connections from Wireguard
-      trustedInterfaces = [ "wg0" ];
+      trustedInterfaces = [
+        "wg0"
+      ];
     };
     # Hosts Entries
     hosts = {

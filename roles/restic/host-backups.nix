@@ -47,7 +47,7 @@ let
       "storagebox" = makeBackup {
         repository = storageConfig.storagebox;
         name = "storagebox";
-        time = "00:00";
+        time = "12:00";
         paths = [
           "/mnt/data/calibre"
           "/mnt/data/immich"
@@ -59,7 +59,7 @@ let
       "local" = makeBackup {
         repository = storageConfig.storagebox-luna;
         name = "local";
-        time = "00:00";
+        time = "12:00";
         paths = [
           "/mnt/data/calibre"
           "/mnt/data/immich"

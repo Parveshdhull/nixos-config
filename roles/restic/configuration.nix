@@ -20,7 +20,7 @@ let
     name = "restic-backups-${backupName}";
     value = {
       serviceConfig = {
-        TimeoutStopSec = "1200"; # Increase timeout to 20 Mintute for cleanup script
+        TimeoutStopSec = "1800"; # Increase timeout to 30 Mintute for cleanup script
       };
     };
   }) currentBackups;

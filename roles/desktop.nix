@@ -5,6 +5,7 @@
     ./dev.nix
     ./hardware.nix
     ./i3.nix
+    ./temp.nix
     ./thunar.nix
     ../services/polkit.nix
   ];
@@ -14,14 +15,15 @@
   # System packages
   environment.systemPackages = with pkgs; [
     alsa-utils
+    appimage-run
     blueman
     chromium # Todo - Use ungoogled-chromium, brave or librewolf etc.
     cryptsetup
     czkawka
     discord
     feh
-    flameshot
     firefox
+    flameshot
     gparted
     gnucash
     keepassxc
@@ -58,6 +60,9 @@
   };
 
   services.upower.enable = true;
+
+  # https://discourse.nixos.org/t/nixos-rebuild-switch-upgrade-networkmanager-wait-online-service-failure/30746/2
+  systemd.services.NetworkManager-wait-online.enable = false;
 
   programs.steam.enable = true;
 }
