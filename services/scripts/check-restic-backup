@@ -36,6 +36,6 @@ fi
 if ! restic -r "$REPO_PATH" --password-file "$PASSWORD_FILE" check --read-data-subset=0.1% --no-lock --no-cache; then
   echo "[ERROR] Repository $REPO_PATH failed the integrity check"
   echo -e "Subject: Restic Repository Health Alert - $HOSTNAME\n\nRepository $REPO_PATH failed the integrity check!" | msmtp "$MY_EMAIL_ADDRESS"
+else
+  echo "Repository $REPO_PATH passed the integrity check"
 fi
-
-echo "Repository $REPO_PATH passed the integrity check"

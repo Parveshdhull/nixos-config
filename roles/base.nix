@@ -20,6 +20,9 @@
     ../services/initial-setup.nix
   ];
 
+  # https://discourse.nixos.org/t/nixos-rebuild-switch-upgrade-networkmanager-wait-online-service-failure/30746/2
+  systemd.services.NetworkManager-wait-online.enable = false;
+
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
