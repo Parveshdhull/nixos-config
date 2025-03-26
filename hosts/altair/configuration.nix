@@ -10,7 +10,7 @@
     ../../roles/ssh.nix
     ../../roles/wireguard-server.nix
     ../../services/alertbot.nix
-    ../../services/market-price-checker.nix
+    # ../../services/market-price-checker.nix
     ../../services/service-failure-notification.nix
     ../../services/signal-cli-monitor.nix
   ];

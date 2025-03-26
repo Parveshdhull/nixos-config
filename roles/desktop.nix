@@ -5,6 +5,7 @@
     ./dev.nix
     ./hardware.nix
     ./i3.nix
+    ./ledger.nix
     ./temp.nix
     ./thunar.nix
     ../services/polkit.nix
@@ -17,17 +18,19 @@
     alsa-utils
     appimage-run
     blueman
-    chromium # Todo - Use ungoogled-chromium, brave or librewolf etc.
+    brave
+    chromium # Todo - Remove after brave migration
     cryptsetup
     czkawka
     discord
     feh
-    firefox
+    firefox # Todo - Remove after librewolf migration
     flameshot
     gparted
     gnucash
     keepassxc
     libreoffice
+    librewolf
     networkmanagerapplet
     pdftk # PDF Toolkit - Combine etc.
     playerctl # Change songs on Spotify

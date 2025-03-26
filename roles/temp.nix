@@ -1,7 +1,10 @@
 { lib, pkgs, ... }:
 
 {
-  networking.firewall.trustedInterfaces = [ "enp7s0" "wlp5s0" ];
+  networking.firewall.trustedInterfaces = [
+    "enp7s0"
+    "wlp5s0"
+  ];
 
   services.pcscd.enable = true;
 
