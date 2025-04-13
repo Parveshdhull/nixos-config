@@ -4,4 +4,5 @@ set -euo pipefail
 # Create 'nebula' directory structure
 mkdir -p /mnt/data
 mkdir -p /home/monu/.config
+mkdir -p /home/monu/.emacs.d
 mkdir -p /mnt/data/nebula/{sync,dotfiles,nixos-config}
