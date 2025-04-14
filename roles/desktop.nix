@@ -21,13 +21,13 @@
     brave
     chromium # Todo - Remove after brave migration
     cryptsetup
-    czkawka
     discord
     feh
     firefox # Todo - Remove after librewolf migration
     flameshot
     gparted
     gnucash
+    ispell # Required for emacs flyspell
     keepassxc
     libreoffice
     librewolf
