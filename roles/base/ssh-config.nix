@@ -15,29 +15,24 @@ in
         HostName nova.cosmos.vpn
         User monu
         Port ${opensshPort}
-        IdentityFile /mnt/secrets/keys/sirius
 
       Host mac
         HostName 192.168.1.9
         User parvesh_monu
         Port 22
-        IdentityFile /mnt/secrets/keys/sirius
 
       Host luna
         HostName luna.cosmos.vpn
         User monu
         Port ${opensshPort}
-        IdentityFile /mnt/secrets/keys/sirius
 
       Host altair
         HostName altair.cosmos.vpn
         User monu
         Port ${opensshPort}
-        IdentityFile /mnt/secrets/keys/sirius
 
       Host github.com
         User git
-        IdentityFile /mnt/secrets/keys/sirius
 
       Host storagebox
         HostName ${storagebox-user}.your-storagebox.de

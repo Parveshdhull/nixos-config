@@ -8,10 +8,7 @@
 
 let
   users = import "${secrets}/keys/users";
-  sshKeys = [
-    users.orion
-    users.sirius
-  ];
+  sshKeys = [ users.orion ];
 in
 {
   age.secrets."hosts/users/monu/pass-hash" = {

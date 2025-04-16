@@ -8,11 +8,19 @@
 {
 
   users.users.monu.packages = [
+    pkgs.ccid
+    pkgs.opensc
     pkgs.yubikey-manager
   ];
 
+  services.udev.packages = [
+    pkgs.yubikey-personalization
+    pkgs.libu2f-host
+  ];
+
+  # Necessary for GPG Agent.
   services.pcscd.enable = true;
-  services.udev.packages = [ pkgs.yubikey-personalization ];
+  hardware.gpgSmartcards.enable = false;
 
   # GPG and SSH
   programs.gnupg.agent = {
