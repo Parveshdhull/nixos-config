@@ -7,15 +7,15 @@
 
 {
   imports = [
-    ./basic-tools.nix
-    ./helpers.nix
-    ./homepage.nix
-    ./msmtp.nix
-    ./networking.nix
-    ./security.nix
-    ./ssh-config.nix
-    ./syncthing.nix
-    ./users.nix
+    ./base/basic-tools.nix
+    ./base/helpers.nix
+    ./base/homepage.nix
+    ./base/msmtp.nix
+    ./base/networking.nix
+    ./base/security.nix
+    ./base/ssh-config.nix
+    ./base/syncthing.nix
+    ./base/users.nix
     "${secrets}/config/env.nix"
     ../services/initial-setup.nix
   ];
