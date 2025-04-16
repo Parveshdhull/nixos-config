@@ -23,7 +23,6 @@
     cryptsetup
     discord
     feh
-    firefox # Todo - Remove after librewolf migration
     flameshot
     gparted
     gnucash

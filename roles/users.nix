@@ -43,6 +43,4 @@ in
       openssh.authorizedKeys.keys = sshKeys;
     };
   };
-
-  security.sudo.wheelNeedsPassword = false; # Todo - remove once migration to pass
 }
