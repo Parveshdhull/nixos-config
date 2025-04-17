@@ -10,7 +10,7 @@
 
   # Printing setup
   services.printing.enable = true;
-  services.printing.drivers = [ pkgs.unstable.cups-brother-dcpt725dw ];
+  services.printing.drivers = [ pkgs.cups-brother-dcpt725dw ];
 
   # Scanner
   hardware = {

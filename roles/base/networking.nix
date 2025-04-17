@@ -32,7 +32,6 @@ in
       "${hosts.astra}" = [ "astra.cosmos.vpn" ]; # phone
     };
     # Search the cosmos domain
-    enableIPv6 = false;
     domain = "cosmos.vpn";
     search = [ "cosmos.vpn" ];
   };

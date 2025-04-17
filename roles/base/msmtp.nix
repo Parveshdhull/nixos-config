@@ -29,6 +29,4 @@ in
       tls_trust_file = "/etc/ssl/certs/ca-certificates.crt";
     };
   };
-
-  environment.systemPackages = with pkgs.unstable; [ signal-cli ];
 }

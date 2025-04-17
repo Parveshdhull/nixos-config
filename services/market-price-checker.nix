@@ -17,7 +17,7 @@
       pkgs.bc
       pkgs.jq
       pkgs.curl
-      pkgs.unstable.signal-cli
+      pkgs.signal-cli
     ];
     onFailure = [ "service-failure-notification.service" ];
     serviceConfig = {

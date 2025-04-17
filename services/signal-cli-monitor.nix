@@ -9,7 +9,7 @@
     description = "Signal CLI Monitor Service";
     path = [
       pkgs.msmtp
-      pkgs.unstable.signal-cli
+      pkgs.signal-cli
     ];
     after = [ "initial-setup.service" ];
     environment = {

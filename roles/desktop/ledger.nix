@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  users.users.monu.packages = with pkgs.unstable; [
+  users.users.monu.packages = with pkgs; [
     ledger-live-desktop
   ];
 

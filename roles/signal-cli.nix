@@ -13,5 +13,5 @@
     };
   };
 
-  environment.systemPackages = with pkgs.unstable; [ signal-cli ];
+  environment.systemPackages = with pkgs; [ signal-cli ];
 }

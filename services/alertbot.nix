@@ -5,7 +5,7 @@
   systemd.services.alertbot = {
     description = "Alert Bot Service";
     after = [ "initial-setup.service" ];
-    path = [ pkgs.unstable.signal-cli ];
+    path = [ pkgs.signal-cli ];
     onFailure = [ "service-failure-notification.service" ];
     serviceConfig = {
       ExecStart = "/run/current-system/sw/bin/python /home/monu/bin/alertbot -r /mnt/data/nebula/sync/sync-all/notes/pinned/reminders -m signal";
