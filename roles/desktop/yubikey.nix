@@ -18,9 +18,11 @@
     pkgs.libu2f-host
   ];
 
+  # When enabled gpg sometime don't detect device or detects after significant delay
+  services.pcscd.enable = false; # Change to true when changing touch policy etc. for openpgp key
+
   # Necessary for GPG Agent.
-  services.pcscd.enable = true;
-  hardware.gpgSmartcards.enable = false;
+  hardware.gpgSmartcards.enable = true; # Doesn't work pcscd is enabled
 
   # GPG and SSH
   programs.gnupg.agent = {
@@ -32,7 +34,7 @@
   security.pam.yubico = {
     enable = true;
     mode = "challenge-response";
-    id = [ (import "${secrets}/config").yubikey-serial ];
+    id = [ (import "${secrets}/config").yubikey-new-serial ];
   };
 
   # Enable the u2f PAM module for login and sudo requests
