@@ -13,7 +13,7 @@
     options = {
       enableBookUploading = true;
       enableBookConversion = true;
-      calibreLibrary = "/mnt/data/calibre";
+      calibreLibrary = "/mnt/data/apps/calibre";
     };
   };
 }

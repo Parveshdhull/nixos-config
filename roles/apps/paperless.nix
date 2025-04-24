@@ -18,7 +18,7 @@
     enable = true;
     passwordFile = secret "service/paperless/pass";
     port = (import "${secrets}/config/ports.nix").paperless;
-    dataDir = "/mnt/data/paperless";
+    dataDir = "/mnt/data/apps/paperless";
     settings = {
       PAPERLESS_ADMIN_USER = "monu";
       PAPERLESS_OCR_USER_ARGS = {

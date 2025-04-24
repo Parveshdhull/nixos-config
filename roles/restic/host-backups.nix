@@ -49,9 +49,8 @@ let
         name = "storagebox";
         time = "12:00";
         paths = [
-          "/mnt/data/calibre"
+          "/mnt/data/apps"
           "/mnt/data/immich"
-          "/mnt/data/paperless"
           "/var/lib/audiobookshelf"
           "/var/lib/calibre-web"
         ];
@@ -61,9 +60,8 @@ let
         name = "local";
         time = "12:00";
         paths = [
-          "/mnt/data/calibre"
+          "/mnt/data/apps"
           "/mnt/data/immich"
-          "/mnt/data/paperless"
           "/var/lib/audiobookshelf"
           "/var/lib/calibre-web"
         ];
