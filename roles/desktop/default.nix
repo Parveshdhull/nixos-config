@@ -2,14 +2,14 @@
 
 {
   imports = [
-    ./desktop/dev.nix
-    ./desktop/hardware.nix
-    ./desktop/i3.nix
-    ./desktop/ledger.nix
-    ./desktop/temp.nix
-    ./desktop/thunar.nix
-    ./desktop/yubikey.nix
-    ../services/polkit.nix
+    ./dev.nix
+    ./hardware.nix
+    ./i3.nix
+    ./ledger.nix
+    ./temp.nix
+    ./thunar.nix
+    ./yubikey.nix
+    ../../services/polkit.nix
   ];
 
   nixpkgs.config.allowUnfree = true;

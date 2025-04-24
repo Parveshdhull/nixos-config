@@ -7,17 +7,17 @@
 
 {
   imports = [
-    ./base/basic-tools.nix
-    ./base/helpers.nix
-    ./base/homepage.nix
-    ./base/msmtp.nix
-    ./base/networking.nix
-    ./base/security.nix
-    ./base/ssh-config.nix
-    ./base/syncthing.nix
-    ./base/users.nix
+    ./basic-tools.nix
+    ./helpers.nix
+    ./homepage.nix
+    ./msmtp.nix
+    ./networking.nix
+    ./security.nix
+    ./ssh-config.nix
+    ./syncthing.nix
+    ./users.nix
     "${secrets}/config/env.nix"
-    ../services/initial-setup.nix
+    ../../services/initial-setup.nix
   ];
 
   # https://discourse.nixos.org/t/nixos-rebuild-switch-upgrade-networkmanager-wait-online-service-failure/30746/2

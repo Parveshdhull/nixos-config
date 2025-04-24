@@ -4,7 +4,7 @@
   imports = [
     ./disk-config.nix
     ./hardware-configuration.nix
-    ../../roles/base.nix
+    ../../roles/base
     ../../roles/janitor.nix
     ../../roles/signal-cli.nix
     ../../roles/ssh.nix

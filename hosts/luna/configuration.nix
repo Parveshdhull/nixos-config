@@ -4,13 +4,10 @@
   imports = [
     ./hardware-configuration.nix
     ./disk-config.nix
-    ../../roles/audiobookshelf.nix
-    ../../roles/base.nix
-    ../../roles/calibre.nix
-    ../../roles/immich.nix
-    ../../roles/paperless.nix
+    ../../roles/apps
+    ../../roles/base
     ../../roles/janitor.nix
-    ../../roles/restic/configuration.nix
+    ../../roles/restic
     ../../roles/ssh.nix
     ../../roles/systemd-boot.nix
     ../../roles/wireguard-client.nix
