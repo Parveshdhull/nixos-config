@@ -1,7 +1,10 @@
 { config }:
 {
-  storagebox = "sftp:storagebox:/home/${config.networking.hostName}";
-  storagebox-luna = "/mnt/storagebox-luna/${config.networking.hostName}";
-  storagebox-nova = "/mnt/storagebox-nova/${config.networking.hostName}";
+  # Common repositories
+  storagebox = "sftp:storagebox:/home/repositories/${config.networking.hostName}";
+  # Luna repositories
+  storagebox-luna = "/mnt/storagebox-luna/repositories/luna";
+  # Nova repositories
+  storagebox-nova = "/mnt/storagebox-nova/repositories/nova";
   storagebox-mega = "rclone:mega:storagebox";
 }
