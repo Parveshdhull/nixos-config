@@ -30,6 +30,7 @@ in
       "${hosts.nova}" = [ "nova.cosmos.vpn" ]; # pc
       "${hosts.luna}" = [ "luna.cosmos.vpn" ]; # lappy
       "${hosts.astra}" = [ "astra.cosmos.vpn" ]; # phone
+      "${hosts.cielo}" = [ "cielo.cosmos.vpn" ]; # cielo
     };
     # Search the cosmos domain
     domain = "cosmos.vpn";
