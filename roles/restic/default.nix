@@ -28,6 +28,7 @@ in
 {
   imports = [
     ./age-secrets.nix
+    ./samba.nix
   ];
 
   environment.etc = {
@@ -35,7 +36,10 @@ in
       builtins.readFile ../../services/scripts/check-restic-backup;
   };
 
-  users.users.monu.packages = [ pkgs.restic ];
+  users.users.monu.packages = [
+    pkgs.rclone
+    pkgs.restic
+  ];
 
   services.restic.backups = currentBackups;
 

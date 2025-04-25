@@ -38,7 +38,7 @@ in
         HostName ${storagebox-user}.your-storagebox.de
         User ${storagebox-user}
         Port 23
-        Identityfile /mnt/secrets/keys/storagebox
+        Identityfile /mnt/secrets/keys/${config.networking.hostName}
     '';
     knownHosts = {
       "${storagebox-user}.your-storagebox.de".publicKey = (import "${secrets}/keys").storagebox;

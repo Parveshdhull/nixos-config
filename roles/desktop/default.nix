@@ -36,7 +36,6 @@
     playerctl # Change songs on Spotify
     portfolio
     qrencode
-    rclone
     redshift
     rofi
     signal-desktop

@@ -21,7 +21,7 @@ in
       inherit passwordFile;
       inherit paths;
       inherit repository;
-      inherit rcloneConfigFile;
+      rcloneConfigFile = secret "service/rclone/conf";
       user = "monu";
       initialize = true;
       extraBackupArgs = [ "--tag=${name}" ];
