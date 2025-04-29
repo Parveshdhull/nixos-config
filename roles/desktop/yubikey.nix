@@ -40,7 +40,7 @@
   # Enable the u2f PAM module for login and sudo requests
   # https://nixos.wiki/wiki/Yubikey#Logging-in
   security.pam.services = {
-    login.u2fAuth = true;
+    # login.u2fAuth = true;
     sudo.u2fAuth = true;
   };
 }
