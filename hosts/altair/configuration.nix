@@ -5,7 +5,6 @@
     ./disk-config.nix
     ./hardware-configuration.nix
     ../../roles/base
-    ../../roles/janitor.nix
     ../../roles/signal-cli.nix
     ../../roles/ssh.nix
     ../../roles/wireguard-server.nix

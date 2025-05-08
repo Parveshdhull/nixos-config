@@ -10,6 +10,7 @@
     ./basic-tools.nix
     ./helpers.nix
     ./homepage.nix
+    ./janitor.nix
     ./msmtp.nix
     ./networking.nix
     ./security.nix
