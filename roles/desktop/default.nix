@@ -34,7 +34,7 @@
     networkmanagerapplet
     pdftk # PDF Toolkit - Combine etc.
     playerctl # Change songs on Spotify
-    portfolio
+    unstable.portfolio
     qrencode
     redshift
     rofi
@@ -44,7 +44,6 @@
     stretchly
     spotify
     sxiv
-    sublime
     terminator
     upower # Check Bluetooth keyboard, mouse battery
     vlc

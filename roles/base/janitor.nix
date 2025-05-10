@@ -7,7 +7,7 @@
 
 {
   nix.gc = {
-    automatic = true;
+    automatic = if config.networking.hostName == "nova" then false else true;
     dates = "daily";
     options = "--delete-older-than 15d";
   };

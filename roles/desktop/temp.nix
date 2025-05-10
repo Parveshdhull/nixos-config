@@ -8,5 +8,6 @@
 
   users.users.monu.packages = [
     pkgs.ffmpeg
+    pkgs.conky
   ];
 }
