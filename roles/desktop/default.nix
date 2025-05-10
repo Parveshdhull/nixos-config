@@ -10,6 +10,7 @@
     ./thunar.nix
     ./yubikey.nix
     ../../services/polkit.nix
+    ../../services/restic-report.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
