@@ -23,7 +23,7 @@
 
   # Timer for Restic report Service
   systemd.timers.restic-report = {
-    description = "Run Alert Bot Every Minute";
+    description = "Run Restic report service Every day at 17:00";
     timerConfig = {
       OnCalendar = "17:00";
       Persistent = true;
