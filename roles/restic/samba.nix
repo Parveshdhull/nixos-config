@@ -38,7 +38,7 @@ in
         "guest account" = "nobody";
         "map to guest" = "Bad User";
         "bind interfaces only" = true;
-        "smb ports" = "${toString (import "${secrets}/config/ports.nix").samba}";
+        "smb ports" = "${toString (import "${secrets}/config/ports.nix").PORT_SAMBA}";
       };
     } // lib.listToAttrs (map makePrivateShare shares.private);
   };

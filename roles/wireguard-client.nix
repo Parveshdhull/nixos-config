@@ -10,7 +10,7 @@ let
   inherit (config.networking) hostName;
 
   serverAddress = (import "${secrets}/config").server-ip;
-  serverPort = (import "${secrets}/config/ports.nix").wireguard;
+  serverPort = (import "${secrets}/config/ports.nix").PORT_WIREGUARD;
   routeAddress = "192.168.1.1";
   interfaceName = "enp7s0";
 

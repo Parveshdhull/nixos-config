@@ -17,7 +17,7 @@
     address = (import "${secrets}/config/hosts.nix").luna;
     enable = true;
     passwordFile = secret "service/paperless/pass";
-    port = (import "${secrets}/config/ports.nix").paperless;
+    port = (import "${secrets}/config/ports.nix").PORT_PAPERLESS;
     dataDir = "/mnt/data/apps/paperless";
     settings = {
       PAPERLESS_ADMIN_USER = "monu";

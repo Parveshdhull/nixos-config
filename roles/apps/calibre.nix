@@ -9,7 +9,7 @@
     user = "monu";
     enable = true;
     listen.ip = (import "${secrets}/config/hosts.nix").luna;
-    listen.port = (import "${secrets}/config/ports.nix").calibre-web;
+    listen.port = (import "${secrets}/config/ports.nix").PORT_CALIBRE_WEB;
     options = {
       enableBookUploading = true;
       enableBookConversion = true;

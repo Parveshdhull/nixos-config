@@ -6,7 +6,7 @@
 }:
 let
   inherit (import "${secrets}/config") storagebox-user;
-  opensshPort = toString (import "${secrets}/config/ports.nix").openssh;
+  opensshPort = toString (import "${secrets}/config/ports.nix").PORT_OPENSSH;
 in
 {
   programs.ssh = {

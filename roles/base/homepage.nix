@@ -13,33 +13,33 @@ in
 {
   services.homepage-dashboard = {
     enable = true;
-    listenPort = ports.homepage-dashboard;
+    listenPort = ports.PORT_HOMEPAGE_DASHBOARD;
     services = [
       {
         "Self Hosted" = [
           {
             "Syncthing" = {
-              href = "http://${hostName}.cosmos.vpn:${toString ports.syncthing}";
+              href = "http://${hostName}.cosmos.vpn:${toString ports.PORT_SYNCTHING}";
             };
           }
           {
             "Paperless" = {
-              href = "http://luna.cosmos.vpn:${toString ports.paperless}";
+              href = "http://luna.cosmos.vpn:${toString ports.PORT_PAPERLESS}";
             };
           }
           {
             "Immich" = {
-              href = "http://luna.cosmos.vpn:${toString ports.immich}";
+              href = "http://luna.cosmos.vpn:${toString ports.PORT_IMMICH}";
             };
           }
           {
             "Calibre" = {
-              href = "http://luna.cosmos.vpn:${toString ports.calibre-web}";
+              href = "http://luna.cosmos.vpn:${toString ports.PORT_CALIBRE_WEB}";
             };
           }
           {
             "Audiobookshelf" = {
-              href = "http://luna.cosmos.vpn:${toString ports.audiobookshelf}";
+              href = "http://luna.cosmos.vpn:${toString ports.PORT_AUDIOBOOHSHELF}";
             };
           }
         ];

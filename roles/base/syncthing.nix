@@ -47,7 +47,7 @@ in
       otherHosts = builtins.filter notThisHost (lib.attrNames config.syncthing.hosts);
       inherit (config) services;
       hosts = import "${secrets}/config/hosts.nix";
-      port = toString (import "${secrets}/config/ports.nix").syncthing;
+      port = toString (import "${secrets}/config/ports.nix").PORT_SYNCTHING;
 
       guiAddress = "${hosts.${hostName}}:${port}";
 

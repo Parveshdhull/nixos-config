@@ -8,7 +8,7 @@
 {
   services.openssh = {
     enable = true;
-    ports = [ (import "${secrets}/config/ports.nix").openssh ];
+    ports = [ (import "${secrets}/config/ports.nix").PORT_OPENSSH ];
     openFirewall = false;
     settings = {
       PasswordAuthentication = false;
