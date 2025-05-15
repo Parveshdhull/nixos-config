@@ -23,9 +23,9 @@
 
   # Timer for Restic report Service
   systemd.timers.restic-report = {
-    description = "Run Restic report service Every day at 17:00";
+    description = "Run Restic report service Every day at 15:00";
     timerConfig = {
-      OnCalendar = "17:00";
+      OnCalendar = "15:00";
       Persistent = true;
       Unit = "restic-report.service";
     };

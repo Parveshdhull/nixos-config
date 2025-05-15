@@ -21,7 +21,7 @@ let
     makeBackup {
       inherit name;
       inherit repository;
-      time = "14:00";
+      time = "13:00";
       paths = [ "/mnt/data/nebula/" ];
     };
 
@@ -30,7 +30,7 @@ let
     makeBackup {
       inherit name;
       inherit repository;
-      time = "14:10";
+      time = "13:30";
       paths = [
         "/mnt/data/apps"
         "/var/lib/audiobookshelf"
@@ -53,7 +53,7 @@ let
       "mega" = makeBackup {
         repository = storageConfig.storagebox-mega;
         name = "mega";
-        time = "14:00";
+        time = "13:00";
         paths = [
           "/mnt/data/nebula/important/creds"
           "/mnt/data/nebula/sync/sync-box/creds/"
