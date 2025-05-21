@@ -6,11 +6,15 @@
     description = "Restic report Service";
     after = [ "initial-setup.service" ];
     path = [
-      pkgs.restic
-      pkgs.rclone
+      pkgs.conky
       pkgs.gawk
       pkgs.openssh
+      pkgs.rclone
+      pkgs.restic
     ];
+    environment = {
+      DISPLAY = ":0";
+    };
     onFailure = [ "service-failure-notification.service" ];
     serviceConfig = {
       ExecStart = "${pkgs.bash}/bin/bash /home/monu/bin/restic-report";

@@ -7,7 +7,6 @@
   ];
 
   users.users.monu.packages = [
-    pkgs.ffmpeg
-    pkgs.conky
+    pkgs.telegram-desktop
   ];
 }

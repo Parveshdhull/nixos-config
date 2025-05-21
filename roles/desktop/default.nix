@@ -22,9 +22,11 @@
     blueman
     brave
     chromium # Todo - Remove after brave migration
+    conky
     cryptsetup
     discord
     feh
+    ffmpeg
     flameshot
     gparted
     gnucash
