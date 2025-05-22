@@ -45,7 +45,7 @@
     silver-searcher
     simplescreenrecorder
     stretchly
-    spotify
+    unstable.spotify
     sxiv
     terminator
     upower # Check Bluetooth keyboard, mouse battery
