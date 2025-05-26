@@ -30,7 +30,7 @@ let
     makeBackup {
       inherit name;
       inherit repository;
-      time = "13:30";
+      time = "13:10";
       paths = [
         "/mnt/data/apps"
         "/var/lib/audiobookshelf"

@@ -44,7 +44,6 @@
     signal-desktop
     silver-searcher
     simplescreenrecorder
-    stretchly
     unstable.spotify
     sxiv
     terminator
@@ -65,5 +64,8 @@
 
   services.upower.enable = true;
 
-  programs.steam.enable = true;
+  programs = {
+    steam.enable = true;
+    slock.enable = true;
+  };
 }
