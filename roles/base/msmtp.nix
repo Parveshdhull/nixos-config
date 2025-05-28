@@ -1,7 +1,7 @@
 {
   lib,
   pkgs,
-  secret,
+  secret-path,
   secrets,
   ...
 }:
@@ -25,7 +25,7 @@ in
       user = myEmailAddress;
       host = "smtp.gmail.com";
       port = "587";
-      passwordeval = "cat ${secret "service/msmtp/credential"}";
+      passwordeval = "cat ${secret-path "service/msmtp/credential"}";
       tls_trust_file = "/etc/ssl/certs/ca-certificates.crt";
     };
   };

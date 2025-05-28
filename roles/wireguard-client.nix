@@ -1,7 +1,7 @@
 {
   pkgs,
   config,
-  secret,
+  secret-path,
   secrets,
   ...
 }:
@@ -25,7 +25,7 @@ in
     wireguard.interfaces.wg0 = {
       ips = [ "${ip}/24" ];
       listenPort = serverPort;
-      privateKeyFile = secret "service/wireguard.${hostName}";
+      privateKeyFile = secret-path "service/wireguard.${hostName}";
       # https://wiki.archlinux.org/index.php/WireGuard#Loop_routing
       postSetup = "ip link show ${interfaceName} &> /dev/null && ip route add ${serverAddress} via ${routeAddress} dev ${interfaceName} || true";
       peers = [

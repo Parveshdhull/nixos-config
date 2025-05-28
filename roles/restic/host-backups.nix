@@ -1,7 +1,7 @@
 {
   pkgs,
   config,
-  secret,
+  secret-path,
   secrets,
   ...
 }:
@@ -10,7 +10,7 @@ let
   inherit
     (import ./backup-config.nix {
       inherit pkgs;
-      inherit secret;
+      inherit secret-path;
       inherit secrets;
     })
     makeBackup
@@ -58,7 +58,7 @@ let
           "/mnt/data/nebula/important/creds"
           "/mnt/data/nebula/sync/sync-box/creds/"
         ];
-        passwordFile = secret "service/restic/pass-mega";
+        passwordFile = secret-path "service/restic/pass-mega";
       };
     };
   };

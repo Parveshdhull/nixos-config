@@ -1,7 +1,7 @@
 {
   pkgs,
   config,
-  secret,
+  secret-path,
   secrets,
   ...
 }:
@@ -34,7 +34,7 @@ in
       listenPort = (import "${secrets}/config/ports.nix").PORT_WIREGUARD;
       postSetup = "${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -s 10.100.0.0/24 -o eth0 -j MASQUERADE";
       postShutdown = "${pkgs.iptables}/bin/iptables -t nat -D POSTROUTING -s 10.100.0.0/24 -o eth0 -j MASQUERADE";
-      privateKeyFile = secret "service/wireguard/altair";
+      privateKeyFile = secret-path "service/wireguard/altair";
 
       peers = [
         {

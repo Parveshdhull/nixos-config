@@ -2,7 +2,7 @@
   pkgs,
   config,
   lib,
-  secret,
+  secret-path,
   secrets,
   ...
 }:
@@ -11,7 +11,7 @@ let
   hostBackups = import ./host-backups.nix {
     inherit pkgs;
     inherit config;
-    inherit secret;
+    inherit secret-path;
     inherit secrets;
   };
   currentBackups = hostBackups.currentHostBackups;

@@ -1,7 +1,7 @@
 {
   pkgs,
   config,
-  secret,
+  secret-path,
   secrets,
   ...
 }:
@@ -32,7 +32,7 @@ in
       isNormalUser = true;
       useDefaultShell = true;
       group = "monu";
-      hashedPasswordFile = "${secret "hosts/users/monu/pass-hash"}";
+      hashedPasswordFile = "${secret-path "hosts/users/monu/pass-hash"}";
       extraGroups = [
         "wheel"
         "networkmanager"

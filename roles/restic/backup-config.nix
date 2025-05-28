@@ -1,7 +1,7 @@
 # Define the makeBackup function
 {
   pkgs,
-  secret,
+  secret-path,
   secrets,
 }:
 let
@@ -14,14 +14,14 @@ in
       name,
       time,
       paths,
-      passwordFile ? secret "service/restic/pass",
+      passwordFile ? secret-path "service/restic/pass",
       rcloneConfigFile ? null,
     }:
     {
       inherit passwordFile;
       inherit paths;
       inherit repository;
-      rcloneConfigFile = secret "service/rclone/conf";
+      rcloneConfigFile = secret-path "service/rclone/conf";
       user = "monu";
       initialize = true;
       extraBackupArgs = [ "--tag=${name}" ];

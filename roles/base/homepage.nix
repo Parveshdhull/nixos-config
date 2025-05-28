@@ -2,18 +2,21 @@
   config,
   lib,
   pkgs,
-  secret,
   secrets,
   ...
 }:
 let
   inherit (config.networking) hostName;
   ports = import "${secrets}/config/ports.nix";
+  hosts = import "${secrets}/config/hosts.nix";
+  dashboard-port = ports.PORT_HOMEPAGE_DASHBOARD;
+  dashboard-port-string = toString dashboard-port;
 in
 {
   services.homepage-dashboard = {
     enable = true;
-    listenPort = ports.PORT_HOMEPAGE_DASHBOARD;
+    listenPort = dashboard-port;
+    allowedHosts = "nova.cosmos.vpn:${dashboard-port-string},luna.cosmos.vpn:${dashboard-port-string},altair.cosmos.vpn:${dashboard-port-string}";
     services = [
       {
         "Self Hosted" = [
@@ -40,6 +43,11 @@ in
           {
             "Audiobookshelf" = {
               href = "http://luna.cosmos.vpn:${toString ports.PORT_AUDIOBOOHSHELF}";
+            };
+          }
+          {
+            "FreshRSS" = {
+              href = "http://luna.cosmos.vpn:${toString ports.PORT_FRESHRSS}";
             };
           }
         ];
