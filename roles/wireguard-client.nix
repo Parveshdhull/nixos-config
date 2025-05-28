@@ -36,8 +36,8 @@ in
             hosts.nova
             hosts.luna
             hosts.astra
+            # "0.0.0.0/0" # Route whole traffic
           ];
-          # allowedIPs = [ "0.0.0.0/0" ]; # Route whole traffic
           endpoint = "${serverAddress}:${toString serverPort}";
           persistentKeepalive = 10;
         }
