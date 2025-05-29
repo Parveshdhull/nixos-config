@@ -35,8 +35,4 @@ in
     domain = "cosmos.vpn";
     search = [ "cosmos.vpn" ];
   };
-  networking.nameservers = [
-    "1.1.1.1"
-    "1.0.0.1"
-  ];
 }

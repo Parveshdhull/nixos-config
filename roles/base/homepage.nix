@@ -50,6 +50,11 @@ in
               href = "http://luna.cosmos.vpn:${toString ports.PORT_FRESHRSS}";
             };
           }
+          {
+            "AdguardHome" = {
+              href = "http://luna.cosmos.vpn:${toString ports.PORT_ADGUARD}";
+            };
+          }
         ];
       }
     ];
