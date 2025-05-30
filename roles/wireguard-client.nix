@@ -9,12 +9,13 @@
 let
   inherit (config.networking) hostName;
 
+  keys = import "${secrets}/keys";
+  hosts = import "${secrets}/config/hosts.nix";
   serverAddress = (import "${secrets}/config").server-ip;
   serverPort = (import "${secrets}/config/ports.nix").PORT_WIREGUARD;
+
   routeAddress = "192.168.1.1";
   interfaceName = "enp7s0";
-
-  hosts = import "${secrets}/config/hosts.nix";
   ip = hosts.${hostName};
 in
 {
@@ -40,6 +41,19 @@ in
           ];
           endpoint = "${serverAddress}:${toString serverPort}";
           persistentKeepalive = 10;
+        }
+        # Only keep these peers when using enp7s0; otherwise, their endpoints won't be reachable.
+        {
+          publicKey = keys.wireguard-nova;
+          allowedIPs = [ "${hosts.nova}/32" ];
+          persistentKeepalive = 10;
+          endpoint = "${hosts.nova-local}:${toString serverPort}";
+        }
+        {
+          publicKey = keys.wireguard-luna;
+          allowedIPs = [ "${hosts.luna}/32" ];
+          persistentKeepalive = 10;
+          endpoint = "${hosts.luna-local}:${toString serverPort}";
         }
       ];
     };
