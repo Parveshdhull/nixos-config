@@ -34,8 +34,8 @@ in
           publicKey = (import "${secrets}/keys").wireguard-altair; # Altair
           allowedIPs = [
             hosts.altair
-            hosts.nova
-            hosts.luna
+            # hosts.nova
+            # hosts.luna
             hosts.astra
             # "0.0.0.0/0" # Route whole traffic
           ];

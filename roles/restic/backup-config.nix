@@ -34,6 +34,7 @@ in
       timerConfig = {
         OnCalendar = time;
         Persistent = true;
+        RandomizedDelaySec = "5min"; # delay to avoid running before system time is correctly synced at boot
       };
       backupPrepareCommand = "${pkgs.restic}/bin/restic unlock --repo ${repository} --password-file ${passwordFile}";
       backupCleanupCommand = "${pkgs.bash}/bin/bash /etc/nebula/scripts/check-restic-backup ${repository} ${passwordFile} ${myEmailAddress}";
