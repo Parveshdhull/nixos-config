@@ -37,14 +37,14 @@
     networkmanagerapplet
     pdftk # PDF Toolkit - Combine etc.
     playerctl # Change songs on Spotify
-    unstable.portfolio
+    portfolio
     qrencode
     redshift
     rofi
     signal-desktop
     silver-searcher
     simplescreenrecorder
-    unstable.spotify
+    spotify
     sxiv
     terminator
     upower # Check Bluetooth keyboard, mouse battery

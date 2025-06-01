@@ -19,6 +19,14 @@ let
   backupServices = lib.mapAttrsToList (backupName: backupConfig: {
     name = "restic-backups-${backupName}";
     value = {
+      after = [
+        "network-online.target"
+        "time-sync.target"
+      ];
+      requires = [
+        "network-online.target"
+        "time-sync.target"
+      ];
       serviceConfig = {
         TimeoutStopSec = "10800"; # Increase timeout to 3 Hours for cleanup script
       };

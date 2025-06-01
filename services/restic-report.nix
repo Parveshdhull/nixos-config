@@ -4,7 +4,16 @@
   # Restic report Service
   systemd.services.restic-report = {
     description = "Restic report Service";
-    after = [ "initial-setup.service" ];
+    after = [
+      "initial-setup.service"
+      "network-online.target"
+      "time-sync.target"
+    ];
+    requires = [
+      "initial-setup.service"
+      "network-online.target"
+      "time-sync.target"
+    ];
     path = [
       pkgs.conky
       pkgs.gawk
@@ -27,9 +36,9 @@
 
   # Timer for Restic report Service
   systemd.timers.restic-report = {
-    description = "Run Restic report service Every day at 14:30";
+    description = "Run Restic report service Every day at 13:30";
     timerConfig = {
-      OnCalendar = "14:30";
+      OnCalendar = "13:30";
       Persistent = true;
       Unit = "restic-report.service";
     };
