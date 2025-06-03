@@ -53,6 +53,7 @@
     xdotool # Required for keybinding
     xorg.xkill
     xorg.xmodmap # Required for emoji keyboard
+    zathura # PDF viewer with auto reload feature
     zenity # Show popups and calendar
   ];
 
