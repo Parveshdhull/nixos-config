@@ -41,6 +41,7 @@
     qrencode
     redshift
     rofi
+    shfmt
     signal-desktop
     silver-searcher
     simplescreenrecorder
