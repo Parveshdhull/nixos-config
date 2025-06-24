@@ -28,6 +28,7 @@
     description = "Run Restic report service Every day at 13:30";
     timerConfig = {
       OnCalendar = "13:30";
+      Persistent = true;
       Unit = "restic-report.service";
     };
     wantedBy = [ "timers.target" ];

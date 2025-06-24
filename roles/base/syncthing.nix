@@ -13,22 +13,18 @@ in
     hosts = lib.mkOption {
       default = {
         nova = {
-          # desktop
           id = keys.syncthing-nova;
           addresses = [ "tcp://nova.cosmos.vpn:22000" ];
         };
         altair = {
-          # server
           id = keys.syncthing-altair;
           addresses = [ "tcp://altair.cosmos.vpn:22000" ];
         };
         luna = {
-          # laptop
           id = keys.syncthing-luna;
           addresses = [ "tcp://luna.cosmos.vpn:22000" ];
         };
         astra = {
-          # Android
           id = keys.syncthing-astra;
           addresses = [ "tcp://astra.cosmos.vpn:22000" ];
         };
