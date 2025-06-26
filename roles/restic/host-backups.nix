@@ -42,12 +42,12 @@ let
 
   hostBackups = {
     "luna" = {
-      "storagebox" = lunaBackup "storagebox" storageConfig.storagebox;
+      "blazebox" = lunaBackup "blazebox" storageConfig.blazebox;
       "storagebox-nova" = lunaBackup "storagebox-nova" storageConfig.storagebox-nova;
       "storagebox-luna" = lunaBackup "storagebox-luna" storageConfig.storagebox-luna;
     };
     "nova" = {
-      "storagebox" = novaBackup "storagebox" storageConfig.storagebox;
+      "blazebox" = novaBackup "blazebox" storageConfig.blazebox;
       "storagebox-nova" = novaBackup "storagebox-nova" storageConfig.storagebox-nova;
       "storagebox-luna" = novaBackup "storagebox-luna" storageConfig.storagebox-luna;
       "mega" = makeBackup {
