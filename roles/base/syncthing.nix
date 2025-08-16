@@ -28,6 +28,10 @@ in
           id = keys.syncthing-astra;
           addresses = [ "tcp://astra.cosmos.vpn:22000" ];
         };
+        lyra = {
+          id = keys.syncthing-lyra;
+          addresses = [ "tcp://lyra.cosmos.vpn:22000" ];
+        };
       };
     };
   };

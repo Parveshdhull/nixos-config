@@ -52,6 +52,11 @@ in
           publicKey = keys.wireguard-astra;
           allowedIPs = [ "${hosts.astra}/32" ];
         }
+        {
+          # Lyra
+          publicKey = keys.wireguard-lyra;
+          allowedIPs = [ "${hosts.lyra}/32" ];
+        }
       ];
     };
   };

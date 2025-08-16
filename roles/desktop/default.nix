@@ -21,7 +21,6 @@
     appimage-run
     blueman
     brave
-    chromium # Todo - Remove after brave migration
     conky
     cryptsetup
     discord

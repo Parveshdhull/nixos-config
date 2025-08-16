@@ -16,7 +16,7 @@ in
   services.homepage-dashboard = {
     enable = true;
     listenPort = dashboard-port;
-    allowedHosts = "nova.cosmos.vpn:${dashboard-port-string},luna.cosmos.vpn:${dashboard-port-string},altair.cosmos.vpn:${dashboard-port-string}";
+    allowedHosts = "${hostName}.cosmos.vpn:${dashboard-port-string},${hosts.${hostName}}:${dashboard-port-string}";
     services = [
       {
         "Self Hosted" = [

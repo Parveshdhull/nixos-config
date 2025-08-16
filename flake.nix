@@ -63,7 +63,7 @@
         builtins.map (hostname: {
           name = hostname;
           value = nixpkgs.lib.nixosSystem {
-            system =  if hostname == "lyra" then "aarch64-linux" else "x86_64-linux";
+            system = "x86_64-linux";
             specialArgs = {
               channels = {
                 inherit nixpkgs unstable agenix;
