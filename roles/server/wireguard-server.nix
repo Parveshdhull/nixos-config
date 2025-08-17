@@ -57,6 +57,11 @@ in
           publicKey = keys.wireguard-lyra;
           allowedIPs = [ "${hosts.lyra}/32" ];
         }
+        # {
+        #   # Cielo
+        #   publicKey = keys.wireguard-cielo;
+        #   allowedIPs = [ "${hosts.cielo}/32" ];
+        # }
       ];
     };
   };
