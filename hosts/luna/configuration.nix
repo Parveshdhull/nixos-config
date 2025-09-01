@@ -6,6 +6,7 @@
     ./disk-config.nix
     ../../roles/apps
     ../../roles/base
+    ../../roles/base/janitor.nix
     ../../roles/restic
     ../../roles/ssh.nix
     ../../roles/systemd-boot.nix

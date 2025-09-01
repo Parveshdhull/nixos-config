@@ -6,6 +6,7 @@
     ./hardware-configuration.nix
     ../../roles/apps/jellyfin.nix
     ../../roles/base
+    ../../roles/base/janitor.nix
     ../../roles/server
     ../../roles/ssh.nix
     ../../services/alertbot.nix
