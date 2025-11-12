@@ -12,5 +12,7 @@
     # Enable Bluetooth
     bluetooth.enable = true;
     bluetooth.powerOnBoot = true;
+    # Install Udev rules for MX master
+    logitech.wireless.enable = true;
   };
 }

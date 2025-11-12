@@ -8,5 +8,6 @@
     ./freshrss.nix
     ./immich.nix
     ./paperless.nix
+    ./seafile.nix
   ];
 }

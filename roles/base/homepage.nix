@@ -55,6 +55,11 @@ in
               href = "http://luna.cosmos.vpn:${toString ports.PORT_ADGUARD}";
             };
           }
+          {
+            "Seafile" = {
+              href = "http://luna.cosmos.vpn:${toString ports.PORT_SEAFILE}";
+            };
+          }
         ];
       }
     ];
