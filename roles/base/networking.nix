@@ -32,7 +32,12 @@ in
     hosts = {
       "${hosts.altair}" = [ "altair.cosmos.vpn" ]; # 🛰️ Guiding star — steady and central
       "${hosts.nova}" = [ "nova.cosmos.vpn" ]; # 💥 Stellar burst — powerful and radiant
-      "${hosts.luna}" = [ "luna.cosmos.vpn" ]; # 🌙 Lunar anchor — calm and ever-present
+      # 🌙 Lunar anchor — calm and ever-present
+      "${hosts.luna}" = [
+        "luna.cosmos.vpn"
+        "rss.luna.cosmos.vpn"
+        "seafile.luna.cosmos.vpn"
+      ];
       "${hosts.astra}" = [ "astra.cosmos.vpn" ]; # 📡 Celestial messenger — light and fast
       "${hosts.lyra}" = [ "lyra.cosmos.vpn" ]; # 🎶 Harmonic traveler — graceful and portable
       "${hosts.cielo}" = [ "cielo.cosmos.vpn" ]; # ☁️ Open sky — peaceful and connected

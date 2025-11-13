@@ -16,7 +16,7 @@
   services.freshrss = {
     enable = true;
     defaultUser = "monu";
-    baseUrl = (import "${secrets}/config/hosts.nix").luna;
+    baseUrl = "http://rss.luna.cosmos.vpn";
     dataDir = "/mnt/data/apps/freshrss";
     passwordFile = secret-path "service/freshrss/pass";
   };

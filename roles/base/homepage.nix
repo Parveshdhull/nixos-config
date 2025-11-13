@@ -47,7 +47,7 @@ in
           }
           {
             "FreshRSS" = {
-              href = "http://luna.cosmos.vpn:${toString ports.PORT_FRESHRSS}";
+              href = "http://rss.luna.cosmos.vpn:${toString ports.PORT_FRESHRSS}";
             };
           }
           {
@@ -57,7 +57,7 @@ in
           }
           {
             "Seafile" = {
-              href = "http://luna.cosmos.vpn:${toString ports.PORT_SEAFILE}";
+              href = "http://seafile.luna.cosmos.vpn:${toString ports.PORT_FRESHRSS}";
             };
           }
         ];

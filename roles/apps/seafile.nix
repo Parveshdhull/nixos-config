@@ -7,19 +7,36 @@
 }:
 let
   config = import "${secrets}/config";
-  seafileHost = (import "${secrets}/config/hosts.nix").luna;
-  seafilePort = (import "${secrets}/config/ports.nix").PORT_SEAFILE;
-  seafileAddress = "${seafileHost}:${toString seafilePort}";
 in
 {
   services.seafile = {
+    enable = true;
     user = "monu";
     dataDir = "/mnt/data/apps/seafile";
-    enable = true;
     adminEmail = config.my-email-address;
     initialAdminPassword = config.seafile-initial-password;
-    seahubAddress = seafileAddress;
     gc.enable = true;
-    ccnetSettings.General.SERVICE_URL = "http://${seafileAddress}";
+    ccnetSettings.General.SERVICE_URL = "http://seafile.luna.cosmos.vpn";
+    seafileSettings.fileserver.host = "unix:/run/seafile/server.sock";
+    seahubExtraConf = ''ALLOWED_HOSTS = ["seafile.luna.cosmos.vpn", "127.0.0.1", "localhost"]'';
+  };
+
+  services.nginx = {
+    enable = true;
+    recommendedProxySettings = true;
+
+    virtualHosts."seafile.luna.cosmos.vpn" = {
+      enableACME = false;
+      forceSSL = false;
+
+      locations."/" = {
+        proxyPass = "http://unix:/run/seahub/gunicorn.sock";
+      };
+
+      locations."/seafhttp" = {
+        proxyPass = "http://unix:/run/seafile/server.sock";
+        extraConfig = ''rewrite ^/seafhttp(.*)$ $1 break;'';
+      };
+    };
   };
 }
