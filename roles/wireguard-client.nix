@@ -37,7 +37,6 @@ in
             # hosts.nova
             # hosts.luna
             hosts.astra
-            hosts.lyra
             # "0.0.0.0/0" # Route whole traffic
           ];
           endpoint = "${serverAddress}:${toString serverPort}";
@@ -49,6 +48,12 @@ in
           allowedIPs = [ "${hosts.nova}/32" ];
           persistentKeepalive = 10;
           endpoint = "${hosts.nova-local}:${toString serverPort}";
+        }
+        {
+          publicKey = keys.wireguard-lyra;
+          allowedIPs = [ "${hosts.lyra}/32" ];
+          persistentKeepalive = 10;
+          endpoint = "${hosts.lyra-local}:${toString serverPort}";
         }
         {
           publicKey = keys.wireguard-luna;

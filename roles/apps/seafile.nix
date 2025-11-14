@@ -18,7 +18,7 @@ in
     gc.enable = true;
     ccnetSettings.General.SERVICE_URL = "http://seafile.luna.cosmos.vpn";
     seafileSettings.fileserver.host = "unix:/run/seafile/server.sock";
-    seahubExtraConf = ''ALLOWED_HOSTS = ["seafile.luna.cosmos.vpn", "127.0.0.1", "localhost"]'';
+    seahubExtraConf = ''ALLOWED_HOSTS = ["seafile.luna.cosmos.vpn"]'';
   };
 
   services.nginx = {

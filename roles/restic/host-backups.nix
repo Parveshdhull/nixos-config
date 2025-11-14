@@ -33,8 +33,7 @@ let
       time = "13:05";
       paths = [
         "/mnt/data/apps"
-        "/var/lib/audiobookshelf"
-        "/var/lib/calibre-web"
+        "/var/lib"
       ];
     };
 

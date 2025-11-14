@@ -15,11 +15,6 @@ in
         User monu
         Port ${opensshPort}
 
-      Host mac
-        HostName 192.168.1.9
-        User parvesh_monu
-        Port 22
-
       Host luna
         HostName luna.cosmos.vpn
         User monu
@@ -33,7 +28,7 @@ in
       Host lyra
         HostName lyra.cosmos.vpn
         User monu
-        Port ${opensshPort}
+        Port 22
 
       Host github.com
         User git
