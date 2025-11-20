@@ -4,7 +4,6 @@
   imports = [
     ./disk-config.nix
     ./hardware-configuration.nix
-    ../../roles/apps/jellyfin.nix
     ../../roles/base
     ../../roles/server
     ../../roles/ssh.nix

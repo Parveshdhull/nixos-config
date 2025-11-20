@@ -35,6 +35,7 @@ in
       # 🌙 Lunar anchor — calm and ever-present
       "${hosts.luna}" = [
         "luna.cosmos.vpn"
+        "grocy.luna.cosmos.vpn"
         "rss.luna.cosmos.vpn"
         "seafile.luna.cosmos.vpn"
       ];

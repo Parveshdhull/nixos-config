@@ -35,6 +35,7 @@
     librewolf
     networkmanagerapplet
     pdftk # PDF Toolkit - Combine etc.
+    pavucontrol # UI for sound control
     playerctl # Change songs on Spotify
     portfolio
     qrencode

@@ -6,6 +6,7 @@
     ./audiobookshelf.nix
     ./calibre.nix
     ./freshrss.nix
+    ./grocy.nix
     ./immich.nix
     ./paperless.nix
     ./seafile.nix
