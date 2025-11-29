@@ -9,6 +9,7 @@
     ./temp.nix
     ./thunar.nix
     ./yubikey.nix
+    ../../services/gitman.nix
     ../../services/polkit.nix
     ../../services/restic-report.nix
   ];
