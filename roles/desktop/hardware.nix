@@ -3,7 +3,7 @@
 {
   imports = [
     ./disks.nix
-    # ./printer.nix
+    ./printer.nix
   ];
 
   services.pipewire.enable = false;

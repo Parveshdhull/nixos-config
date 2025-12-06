@@ -12,4 +12,8 @@
   networking.enableIPv6 = false;
   services.fail2ban.enable = true;
   security.pam.sshAgentAuth.enable = true;
+
+  # https://xeiaso.net/blog/paranoid-nixos-2021-07-18/
+  nix.allowedUsers = [ "@wheel" ];
+  environment.defaultPackages = lib.mkForce [];
 }

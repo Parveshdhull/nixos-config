@@ -60,6 +60,11 @@ in
               href = "http://seafile.luna.cosmos.vpn:${toString ports.PORT_FRESHRSS}";
             };
           }
+          {
+            "Grocy" = {
+              href = "http://grocy.luna.cosmos.vpn:${toString ports.PORT_FRESHRSS}";
+            };
+          }
         ];
       }
     ];
