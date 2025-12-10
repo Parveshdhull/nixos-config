@@ -9,6 +9,6 @@
     ./grocy.nix
     ./immich.nix
     ./paperless.nix
-    ./seafile.nix
+    # ./seafile.nix
   ];
 }

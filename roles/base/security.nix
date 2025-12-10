@@ -14,6 +14,6 @@
   security.pam.sshAgentAuth.enable = true;
 
   # https://xeiaso.net/blog/paranoid-nixos-2021-07-18/
-  nix.allowedUsers = [ "@wheel" ];
+  nix.settings.allowed-users = [ "@wheel" ];
   environment.defaultPackages = lib.mkForce [];
 }
