@@ -18,6 +18,8 @@
         home-manager.follows = "";
       };
     };
+    copyparty.url = "github:9001/copyparty";
+    copyparty.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -28,6 +30,7 @@
       disko,
       secrets,
       agenix,
+      copyparty,
     }:
     let
       overlay =
@@ -52,7 +55,10 @@
       overlayModule =
         { config, pkgs, ... }:
         {
-          nixpkgs.overlays = [ overlay ];
+          nixpkgs.overlays = [
+            overlay
+            copyparty.overlays.default
+          ];
         };
 
       # To generate host configurations for all hosts.
@@ -74,6 +80,7 @@
               overlayModule
               disko.nixosModules.disko
               agenix.nixosModules.default
+              copyparty.nixosModules.default
               ./hosts/${hostname}/configuration.nix
               (_: { networking.hostName = hostname; })
             ];

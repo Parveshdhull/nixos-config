@@ -56,8 +56,13 @@ in
             };
           }
           {
-            "Seafile" = {
-              href = "http://seafile.luna.cosmos.vpn:${toString ports.PORT_FRESHRSS}";
+            "Copyparty-Luna" = {
+              href = "http://luna.cosmos.vpn:${toString ports.PORT_COPYPARTY}";
+            };
+          }
+          {
+            "Copyparty-Nova" = {
+              href = "http://nova.cosmos.vpn:${toString ports.PORT_COPYPARTY}";
             };
           }
           {

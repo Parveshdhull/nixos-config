@@ -37,7 +37,6 @@ in
         "luna.cosmos.vpn"
         "grocy.luna.cosmos.vpn"
         "rss.luna.cosmos.vpn"
-        "seafile.luna.cosmos.vpn"
       ];
       "${hosts.astra}" = [ "astra.cosmos.vpn" ]; # 📡 Celestial messenger — light and fast
       "${hosts.lyra}" = [ "lyra.cosmos.vpn" ]; # 🎶 Harmonic traveler — graceful and portable

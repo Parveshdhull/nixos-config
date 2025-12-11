@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    # ../../roles/apps/copyparty.nix
     ../../roles/base
     ../../roles/desktop
     ../../roles/restic
