@@ -59,16 +59,14 @@
     zenity # Show popups and calendar
   ];
 
-  # Emacs setup
-  services.emacs = {
-    enable = true;
-    package = pkgs.emacs;
+  services = {
+    emacs.enable = true;
+    upower.enable = true;
+    physlock = {
+      enable = true;
+      allowAnyUser = true;
+    };
   };
 
-  services.upower.enable = true;
-
-  programs = {
-    steam.enable = true;
-    slock.enable = true;
-  };
+  programs.steam.enable = true;
 }
