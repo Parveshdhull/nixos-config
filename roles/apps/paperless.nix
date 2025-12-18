@@ -27,6 +27,5 @@
         continue_on_soft_render_error = true;
       };
     };
-    user = "monu";
   };
 }

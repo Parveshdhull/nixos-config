@@ -21,7 +21,6 @@ in
 
   services.copyparty = {
     enable = true;
-    user = "monu";
     settings = {
       i = "${hostName}.cosmos.vpn";
       p = [ (import "${secrets}/config/ports.nix").PORT_COPYPARTY ];
