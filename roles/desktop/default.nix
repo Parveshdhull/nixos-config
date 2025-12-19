@@ -5,7 +5,8 @@
     ./dev.nix
     ./hardware.nix
     ./i3.nix
-    ./ledger.nix
+    ./firejail.nix
+    # ./ledger.nix
     ./temp.nix
     ./thunar.nix
     ./yubikey.nix
@@ -21,41 +22,31 @@
     alsa-utils
     appimage-run
     blueman
-    brave
     conky
     cryptsetup
-    discord
-    feh
     ffmpeg
-    flameshot
+    gnucash # Todo - migrate to firejail - Profile missing
     gparted
-    gnucash
     ispell # Required for emacs flyspell
-    keepassxc
+    keepassxc # Todo - migrate to firejail - Fix Yubikey Access
     libreoffice
-    librewolf
     networkmanagerapplet
     pdftk # PDF Toolkit - Combine etc.
     pavucontrol # UI for sound control
     playerctl # Change songs on Spotify
-    portfolio
+    portfolio # Todo - migrate to firejail - Profile missing
     qrencode
     redshift
     rofi
     shfmt
-    signal-desktop
     silver-searcher
-    simplescreenrecorder
-    spotify
     sxiv
     terminator
     upower # Check Bluetooth keyboard, mouse battery
-    vlc
     xclip # Required for prowser
     xdotool # Required for keybinding
     xorg.xkill
     xorg.xmodmap # Required for emoji keyboard
-    zathura # PDF viewer with auto reload feature
     zenity # Show popups and calendar
   ];
 

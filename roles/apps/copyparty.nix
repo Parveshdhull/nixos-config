@@ -5,7 +5,7 @@
   ...
 }:
 let
-  hostName = config.networking.hostName;
+  inherit (config.networking) hostName;
 in
 {
   age.secrets = {
