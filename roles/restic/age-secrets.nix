@@ -6,11 +6,11 @@
       commonSecrets = {
         "service/restic/pass" = {
           file = "${secrets}/agenix/service/restic/pass.age";
-          mode = "644";
+          owner = "monu";
         };
         "service/rclone/conf" = {
           file = "${secrets}/agenix/service/rclone/conf.age";
-          mode = "644";
+          owner = "monu";
         };
       };
     in
@@ -19,7 +19,7 @@
       // {
         "service/restic/pass-mega" = {
           file = "${secrets}/agenix/service/restic/pass-mega.age";
-          mode = "644";
+          owner = "monu";
         };
       }
     else

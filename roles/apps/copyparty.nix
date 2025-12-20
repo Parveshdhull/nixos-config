@@ -11,11 +11,11 @@ in
   age.secrets = {
     "service/copyparty/monu" = {
       file = "${secrets}/agenix/service/copyparty/monu.age";
-      mode = "644";
+      owner = "copyparty";
     };
     "service/copyparty/bob" = {
       file = "${secrets}/agenix/service/copyparty/bob.age";
-      mode = "644";
+      owner = "copyparty";
     };
   };
 

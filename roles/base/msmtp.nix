@@ -12,7 +12,7 @@ in
   age.secrets = {
     "service/msmtp/credential" = {
       file = "${secrets}/agenix/service/msmtp/credential.age";
-      mode = "644";
+      owner = "monu";
     };
   };
 

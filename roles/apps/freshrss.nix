@@ -9,7 +9,7 @@
   age.secrets = {
     "service/freshrss/pass" = {
       file = "${secrets}/agenix/service/freshrss/pass.age";
-      mode = "644";
+      owner = "freshrss";
     };
   };
 

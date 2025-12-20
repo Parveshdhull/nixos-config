@@ -23,7 +23,7 @@
     appimage-run
     blueman
     conky
-    cryptsetup
+    cryptsetup # For disk encryption
     ffmpeg
     gnucash # Todo - migrate to firejail - Profile missing
     gparted

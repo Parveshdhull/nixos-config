@@ -4,7 +4,7 @@
   age.secrets = {
     "service/market-price-checker/assets" = {
       file = "${secrets}/agenix/service/market-price-checker/assets.age";
-      mode = "644";
+      owner = "monu";
     };
   };
 
