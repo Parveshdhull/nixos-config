@@ -29,4 +29,6 @@
       };
     };
   };
+
+  users.users.restic.extraGroups = [ "paperless" ];
 }

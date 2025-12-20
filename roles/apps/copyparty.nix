@@ -57,4 +57,6 @@ in
       };
     };
   };
+
+  users.users.restic.extraGroups = [ "copyparty" ];
 }

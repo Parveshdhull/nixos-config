@@ -22,7 +22,7 @@ in
       inherit paths;
       inherit repository;
       rcloneConfigFile = secret-path "service/rclone/conf";
-      user = "monu";
+      user = "restic";
       initialize = true;
       extraBackupArgs = [ "--tag=${name}" ];
       pruneOpts = [

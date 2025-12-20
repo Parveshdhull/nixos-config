@@ -41,6 +41,12 @@ in
     pkgs.restic
   ];
 
+  users.users.restic = {
+    isSystemUser = true;
+    group = "monu";
+    extraGroups = [ "monu" ];
+  };
+
   services.restic.backups = currentBackups;
 
   # Dynamically update systemd services for each backup and increase timeout

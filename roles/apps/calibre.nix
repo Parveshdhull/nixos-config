@@ -15,4 +15,6 @@
       calibreLibrary = "/mnt/data/apps/calibre";
     };
   };
+
+  users.users.restic.extraGroups = [ "calibre-web" ];
 }
