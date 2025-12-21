@@ -13,6 +13,7 @@ in
     "service/msmtp/credential" = {
       file = "${secrets}/agenix/service/msmtp/credential.age";
       group = "monu";
+      mode = "440";
     };
   };
 

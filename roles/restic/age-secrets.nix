@@ -7,10 +7,12 @@
         "service/restic/pass" = {
           file = "${secrets}/agenix/service/restic/pass.age";
           group = "monu";
+          mode = "440";
         };
         "service/rclone/conf" = {
           file = "${secrets}/agenix/service/rclone/conf.age";
           group = "monu";
+          mode = "440";
         };
       };
     in
