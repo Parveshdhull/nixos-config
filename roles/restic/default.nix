@@ -44,7 +44,6 @@ in
   users.users.restic = {
     isSystemUser = true;
     group = "monu";
-    extraGroups = [ "monu" ];
   };
 
   services.restic.backups = currentBackups;

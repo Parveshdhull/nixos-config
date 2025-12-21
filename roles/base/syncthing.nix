@@ -76,12 +76,11 @@ in
         group = "monu";
         overrideDevices = true;
         overrideFolders = true;
-        configDir = "/home/monu/.config/syncthing/config";
-        dataDir = "/home/monu/.config/syncthing";
+        dataDir = "/mnt/data/apps/syncthing";
         inherit guiAddress;
 
         # Use when syncing gets stuck.
-        #extraFlags = ["--reset-deltas"];
+        # extraFlags = ["--debug-reset-delta-idxs"];
 
         settings = {
           gui = {
