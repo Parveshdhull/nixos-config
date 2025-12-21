@@ -10,6 +10,4 @@
     host = (import "${secrets}/config/hosts.nix").luna;
     port = (import "${secrets}/config/ports.nix").PORT_AUDIOBOOHSHELF;
   };
-
-  users.users.restic.extraGroups = [ "audioboohshelf" ];
 }

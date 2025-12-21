@@ -14,6 +14,4 @@
     settings.currency = "INR";
     nginx.enableSSL = false;
   };
-
-  users.users.restic.extraGroups = [ "nginx" ];
 }

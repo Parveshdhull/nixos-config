@@ -20,6 +20,4 @@
     dataDir = "/mnt/data/apps/freshrss";
     passwordFile = secret-path "service/freshrss/pass";
   };
-
-  users.users.restic.extraGroups = [ "freshrss" ];
 }

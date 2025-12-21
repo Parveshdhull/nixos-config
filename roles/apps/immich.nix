@@ -12,6 +12,4 @@
     machine-learning.enable = false;
     port = (import "${secrets}/config/ports.nix").PORT_IMMICH;
   };
-
-  users.users.restic.extraGroups = [ "immich" ];
 }

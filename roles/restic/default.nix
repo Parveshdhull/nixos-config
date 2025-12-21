@@ -21,6 +21,7 @@ let
     value = {
       serviceConfig = {
         TimeoutStopSec = "10800"; # Increase timeout to 3 Hours for cleanup script
+        AmbientCapabilities = [ "CAP_DAC_READ_SEARCH" ];
       };
     };
   }) currentBackups;
@@ -43,8 +44,9 @@ in
 
   users.users.restic = {
     isSystemUser = true;
-    group = "monu";
+    group = "restic";
   };
+  users.groups.restic = {};
 
   services.restic.backups = currentBackups;
 

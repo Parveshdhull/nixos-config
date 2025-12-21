@@ -22,6 +22,7 @@
         "service/restic/pass-mega" = {
           file = "${secrets}/agenix/service/restic/pass-mega.age";
           group = "monu";
+          mode = "440";
         };
       }
     else
