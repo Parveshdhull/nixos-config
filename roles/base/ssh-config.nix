@@ -25,6 +25,11 @@ in
         User monu
         Port ${opensshPort}
 
+      Host localhost
+        HostName localhost
+        User orion
+        Port ${opensshPort}
+
       Host lyra
         HostName lyra.cosmos.vpn
         User monu

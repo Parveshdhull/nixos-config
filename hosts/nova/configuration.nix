@@ -7,6 +7,7 @@
     ../../roles/base
     ../../roles/desktop
     ../../roles/restic
+    ../../roles/ssh.nix
     ../../roles/systemd-boot.nix
     ../../roles/wireguard-client.nix
   ];

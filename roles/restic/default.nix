@@ -37,16 +37,19 @@ in
       builtins.readFile ../../services/scripts/check-restic-backup;
   };
 
-  users.users.monu.packages = [
-    pkgs.rclone
-    pkgs.restic
-  ];
+  users = {
+    users.monu.packages = [
+      pkgs.rclone
+      pkgs.restic
+    ];
 
-  users.users.restic = {
-    isSystemUser = true;
-    group = "restic";
+    users.restic = {
+      isSystemUser = true;
+      group = "restic";
+    };
+
+    groups.restic = { };
   };
-  users.groups.restic = {};
 
   services.restic.backups = currentBackups;
 

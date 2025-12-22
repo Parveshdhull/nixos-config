@@ -13,7 +13,10 @@
     settings = {
       PasswordAuthentication = false;
       PermitRootLogin = lib.mkForce "no";
-      AllowUsers = [ "monu" ];
+      AllowUsers = [
+        "monu"
+        "orion"
+      ];
     };
   };
 }

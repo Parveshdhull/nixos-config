@@ -15,29 +15,58 @@ in
     file = "${secrets}/agenix/hosts/users/monu/pass-hash.age";
   };
 
-  # Give extra permissions with Nix
-  nix.settings.trusted-users = [ "monu" ];
+  age.secrets."hosts/users/orion/pass-hash" = {
+    file = "${secrets}/agenix/hosts/users/orion/pass-hash.age";
+  };
 
   users = {
-    groups.monu = {
-      gid = 1000;
-      name = "monu";
+    groups = {
+      monu = {
+        gid = 1000;
+        name = "monu";
+      };
+      orion = {
+        gid = 1001;
+        name = "orion";
+      };
     };
 
+    users = {
+      monu = {
+        uid = 1000;
+        createHome = true;
+        isNormalUser = true;
+        useDefaultShell = true;
+        group = "monu";
+        hashedPasswordFile = "${secret-path "hosts/users/monu/pass-hash"}";
+        extraGroups = [
+          "networkmanager"
+        ];
+        openssh.authorizedKeys.keys = sshKeys;
+      };
+
+      orion = {
+        uid = 1001;
+        group = "monu";
+        isNormalUser = true;
+        hashedPasswordFile = "${secret-path "hosts/users/orion/pass-hash"}";
+        extraGroups = [
+          "wheel"
+        ];
+        openssh.authorizedKeys.keys = sshKeys;
+      };
+    };
     mutableUsers = false; # Set mutableUsers to false to ensure hashed passwords function correctly
-
-    users.monu = {
-      uid = 1000;
-      createHome = true;
-      isNormalUser = true;
-      useDefaultShell = true;
-      group = "monu";
-      hashedPasswordFile = "${secret-path "hosts/users/monu/pass-hash"}";
-      extraGroups = [
-        "wheel"
-        "networkmanager"
-      ];
-      openssh.authorizedKeys.keys = sshKeys;
-    };
   };
+
+  # Make home readable to monu group(required for orion)
+  systemd.tmpfiles.rules = [
+    "d /home/monu 750 monu monu - -"
+  ];
+
+  # Give extra permissions with Nix
+  nix.settings.trusted-users = [
+    "monu"
+    "orion"
+  ];
 }

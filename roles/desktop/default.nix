@@ -9,6 +9,7 @@
     # ./ledger.nix
     ./temp.nix
     ./thunar.nix
+    ./vm.nix
     ./yubikey.nix
     ../../services/gitman.nix
     ../../services/polkit.nix
