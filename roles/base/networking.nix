@@ -9,12 +9,6 @@ let
   hosts = import "${secrets}/config/hosts.nix";
 in
 {
-  environment.systemPackages = with pkgs; [
-    curl
-    dig
-    wget
-  ];
-
   networking = {
     networkmanager.enable = true;
     # Firewall

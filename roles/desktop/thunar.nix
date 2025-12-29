@@ -1,7 +1,7 @@
 { lib, pkgs, ... }:
 
 {
-  users.users.monu.packages = [ pkgs.xarchiver ];
+  environment.systemPackages = [ pkgs.xarchiver ];
 
   # Thunar file manager setup
   programs.thunar.enable = true;

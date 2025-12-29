@@ -8,6 +8,8 @@
 {
   environment.systemPackages = with pkgs; [
     bc
+    curl
+    dig
     file
     gnupg
     imagemagick
@@ -18,5 +20,6 @@
     tree
     unzip
     vim
+    wget
   ];
 }

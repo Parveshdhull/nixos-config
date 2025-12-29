@@ -3,9 +3,9 @@
 {
   imports = [
     ./dev.nix
+    ./firejail.nix
     ./hardware.nix
     ./i3.nix
-    ./firejail.nix
     # ./ledger.nix
     ./temp.nix
     ./thunar.nix

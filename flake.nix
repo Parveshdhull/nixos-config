@@ -8,6 +8,7 @@
     disko.inputs.nixpkgs.follows = "nixpkgs";
     secrets = {
       url = "git+ssh://git@github.com/parveshdhull/nixos-config-secrets";
+      # url = "path:/mnt/data/nebula/nixos-config-secrets";
       flake = false;
     };
     agenix = {
