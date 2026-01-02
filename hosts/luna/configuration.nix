@@ -5,7 +5,7 @@
     ./hardware-configuration.nix
     ./disk-config.nix
     ../../roles/apps
-    ../../roles/base
+    ../../roles/common
     ../../roles/restic
     ../../roles/ssh.nix
     ../../roles/systemd-boot.nix

@@ -16,8 +16,6 @@
     ../../services/restic-report.nix
   ];
 
-  nixpkgs.config.allowUnfree = true;
-
   # System packages
   environment.systemPackages = with pkgs; [
     alsa-utils

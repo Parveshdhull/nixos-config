@@ -31,11 +31,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1767317991,
-        "narHash": "sha256-NUqvf0IUEUaRvzw/v3E9qQ4247x1IlroWLh7iH/JjB4=",
+        "lastModified": 1767353874,
+        "narHash": "sha256-eilskoHXQzv8n7OZv9SgaTr2hSaoOg3I/tkUryKSiSI=",
         "owner": "9001",
         "repo": "copyparty",
-        "rev": "5b89a2e3b20fb14e09e8ebfb583c1ed4c42ec385",
+        "rev": "3bf80c8152ef0264dc0db0b0796da47f3d20232a",
         "type": "github"
       },
       "original": {
@@ -103,18 +103,17 @@
         "nixpkgs": "nixpkgs",
         "secrets": "secrets",
         "snitch": "snitch",
-        "unstable": "unstable",
-        "witr": "witr"
+        "unstable": "unstable"
       }
     },
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1767332382,
-        "narHash": "sha256-9YdLcXWxzb1hFqO/A0aNb2Dy2f1gwyPdH5fyyJ7tfww=",
+        "lastModified": 1767354415,
+        "narHash": "sha256-wVJc+IuopbV1b5b+elYrxt1jNKvZwTqleAAdRCBFZHs=",
         "ref": "refs/heads/main",
-        "rev": "a22a79ed9811bd6387b7b2dabee1db7a9d4d8364",
-        "revCount": 137,
+        "rev": "8ac01bdf058d67b389fcc0d4ea67da8379a55e81",
+        "revCount": 138,
         "type": "git",
         "url": "ssh://git@github.com/parveshdhull/nixos-config-secrets"
       },
@@ -171,26 +170,6 @@
         "id": "nixpkgs",
         "ref": "nixos-unstable",
         "type": "indirect"
-      }
-    },
-    "witr": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1767297494,
-        "narHash": "sha256-Ylvs2bXDshwKA1O8dRFCOatXPGYg7yx17pLAj2o78mk=",
-        "owner": "karol-broda",
-        "repo": "snitch",
-        "rev": "57d592408de364bbbef3c89b85458e7cf61fd2e4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "karol-broda",
-        "repo": "snitch",
-        "type": "github"
       }
     }
   },

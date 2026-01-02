@@ -4,7 +4,7 @@
   imports = [
     ./disk-config.nix
     ./hardware-configuration.nix
-    ../../roles/base
+    ../../roles/common
     ../../roles/server
     ../../roles/ssh.nix
     ../../services/alertbot.nix

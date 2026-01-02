@@ -4,7 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     # ../../roles/apps/copyparty.nix
-    ../../roles/base
+    ../../roles/common
     ../../roles/desktop
     ../../roles/restic
     ../../roles/ssh.nix

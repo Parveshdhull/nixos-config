@@ -4,8 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     unstable.url = "nixpkgs/nixos-unstable";
-    disko.url = "github:nix-community/disko";
-    disko.inputs.nixpkgs.follows = "nixpkgs";
     secrets = {
       url = "git+ssh://git@github.com/parveshdhull/nixos-config-secrets";
       # url = "path:/mnt/data/nebula/nixos-config-secrets";
@@ -19,12 +17,12 @@
         home-manager.follows = "";
       };
     };
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
     copyparty.url = "github:9001/copyparty";
     copyparty.inputs.nixpkgs.follows = "nixpkgs";
     snitch.url = "github:karol-broda/snitch";
     snitch.inputs.nixpkgs.follows = "nixpkgs";
-    witr.url = "github:karol-broda/snitch";
-    witr.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -37,33 +35,23 @@
       agenix,
       copyparty,
       snitch,
-      witr,
     }:
     let
-      overlay =
-        final: prev:
-        let
-          # Import nixpkgs for stable and unstable with unfree enabled
-          stablePkgs = import nixpkgs {
-            inherit (prev) system;
-            config.allowUnfree = true;
-          };
-          unstablePkgs = import unstable {
-            inherit (prev) system;
-            config.allowUnfree = true;
-          };
-        in
-        {
-          nixpkgs = stablePkgs;
-          unstable = unstablePkgs;
-        };
-
       # Overlay to make `pkgs.unstable` available in configuration
       overlayModule =
-        { config, pkgs, ... }:
+        { pkgs, ... }:
         {
           nixpkgs.overlays = [
-            overlay
+            (final: prev: {
+              nixpkgs = import nixpkgs {
+                inherit (prev) system;
+                config.allowUnfree = true;
+              };
+              unstable = import unstable {
+                inherit (prev) system;
+                config.allowUnfree = true;
+              };
+            })
             copyparty.overlays.default
           ];
         };
@@ -91,7 +79,6 @@
               (_: {
                 environment.systemPackages = [
                   snitch.packages.x86_64-linux.default
-                  witr.packages.x86_64-linux.default
                 ];
               })
               ./hosts/${hostname}/configuration.nix
