@@ -102,7 +102,9 @@
         "disko": "disko",
         "nixpkgs": "nixpkgs",
         "secrets": "secrets",
-        "unstable": "unstable"
+        "snitch": "snitch",
+        "unstable": "unstable",
+        "witr": "witr"
       }
     },
     "secrets": {
@@ -119,6 +121,26 @@
       "original": {
         "type": "git",
         "url": "ssh://git@github.com/parveshdhull/nixos-config-secrets"
+      }
+    },
+    "snitch": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1767297494,
+        "narHash": "sha256-Ylvs2bXDshwKA1O8dRFCOatXPGYg7yx17pLAj2o78mk=",
+        "owner": "karol-broda",
+        "repo": "snitch",
+        "rev": "57d592408de364bbbef3c89b85458e7cf61fd2e4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "karol-broda",
+        "repo": "snitch",
+        "type": "github"
       }
     },
     "systems": {
@@ -149,6 +171,26 @@
         "id": "nixpkgs",
         "ref": "nixos-unstable",
         "type": "indirect"
+      }
+    },
+    "witr": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1767297494,
+        "narHash": "sha256-Ylvs2bXDshwKA1O8dRFCOatXPGYg7yx17pLAj2o78mk=",
+        "owner": "karol-broda",
+        "repo": "snitch",
+        "rev": "57d592408de364bbbef3c89b85458e7cf61fd2e4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "karol-broda",
+        "repo": "snitch",
+        "type": "github"
       }
     }
   },

@@ -59,11 +59,6 @@ in
     mutableUsers = false; # Set mutableUsers to false to ensure hashed passwords function correctly
   };
 
-  # Make home readable to monu group(required for orion)
-  systemd.tmpfiles.rules = [
-    "d /home/monu 750 monu monu - -"
-  ];
-
   # Give extra permissions with Nix
   nix.settings.trusted-users = [
     "monu"

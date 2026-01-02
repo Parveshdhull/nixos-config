@@ -21,6 +21,10 @@
     };
     copyparty.url = "github:9001/copyparty";
     copyparty.inputs.nixpkgs.follows = "nixpkgs";
+    snitch.url = "github:karol-broda/snitch";
+    snitch.inputs.nixpkgs.follows = "nixpkgs";
+    witr.url = "github:karol-broda/snitch";
+    witr.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -32,6 +36,8 @@
       secrets,
       agenix,
       copyparty,
+      snitch,
+      witr,
     }:
     let
       overlay =
@@ -82,6 +88,12 @@
               disko.nixosModules.disko
               agenix.nixosModules.default
               copyparty.nixosModules.default
+              (_: {
+                environment.systemPackages = [
+                  snitch.packages.x86_64-linux.default
+                  witr.packages.x86_64-linux.default
+                ];
+              })
               ./hosts/${hostname}/configuration.nix
               (_: { networking.hostName = hostname; })
             ];
