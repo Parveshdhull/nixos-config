@@ -5,7 +5,6 @@
   secrets,
   ...
 }:
-
 {
   services.grocy = {
     enable = true;

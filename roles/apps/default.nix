@@ -9,6 +9,7 @@
     ./freshrss.nix
     ./grocy.nix
     ./immich.nix
+    ./memos.nix
     ./paperless.nix
   ];
 }

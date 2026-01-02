@@ -70,6 +70,11 @@ in
               href = "http://grocy.luna.cosmos.vpn:${toString ports.PORT_FRESHRSS}";
             };
           }
+          {
+            "Memos" = {
+              href = "http://luna.cosmos.vpn:${toString ports.PORT_MEMOS}";
+            };
+          }
         ];
       }
     ];
