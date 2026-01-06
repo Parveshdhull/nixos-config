@@ -2,9 +2,10 @@
 
 {
   environment.systemPackages = with pkgs; [
-    # android-tools
+    android-tools
     # gpick # color picker
     gnumake
+    scrcpy
     # nodejs
     # tmux
     # typescript

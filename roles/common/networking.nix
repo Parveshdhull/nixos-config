@@ -36,6 +36,8 @@ in
       "${hosts.astra}" = [ "astra.cosmos.vpn" ]; # 📡 Celestial messenger — light and fast
       "${hosts.lyra}" = [ "lyra.cosmos.vpn" ]; # 🎶 Harmonic traveler — graceful and portable
       "${hosts.cielo}" = [ "cielo.cosmos.vpn" ]; # ☁️ Open sky — peaceful and connected
+      "${hosts.rhea-new}" = [ "rhea-new.cosmos.vpn" ]; # 🌙 Titan moon — renewed and robust
+      "${hosts.rhea-old}" = [ "rhea-old.cosmos.vpn" ]; # 🌙 Titan moon — legacy and stable
     };
   };
 }
