@@ -7,6 +7,9 @@
 }:
 
 let
+  inherit (config.networking) hostName;
+  hosts = import "${secrets}/config/hosts.nix";
+
   makePrivateShare = path: {
     name = builtins.baseNameOf path;
     value = {
@@ -29,14 +32,16 @@ in
 
   services.samba = {
     enable = true;
+    nmbd.enable = lib.mkForce false;
     settings = {
       "global" = {
-        "netbios name" = config.networking.hostName;
+        "netbios name" = hostName;
         "name resolve order" = "bcast host";
         "load printers" = false;
         "printcap name" = "/dev/null";
         "guest account" = "nobody";
         "map to guest" = "Bad User";
+        "interfaces" = "lo ${hosts.${hostName}}/24";
         "bind interfaces only" = true;
         "smb ports" = "${toString (import "${secrets}/config/ports.nix").PORT_SAMBA}";
       };
