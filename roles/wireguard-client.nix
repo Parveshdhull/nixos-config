@@ -37,8 +37,6 @@ in
             # hosts.nova
             # hosts.luna
             hosts.astra
-            hosts.rhea-new
-            hosts.rhea-old
             # "0.0.0.0/0" # Route whole traffic
           ];
           endpoint = "${serverAddress}:${toString serverPort}";

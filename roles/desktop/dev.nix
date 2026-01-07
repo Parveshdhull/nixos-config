@@ -5,7 +5,6 @@
     android-tools
     # gpick # color picker
     gnumake
-    scrcpy
     # nodejs
     # tmux
     # typescript
