@@ -16,6 +16,7 @@
     ncdu
     numlockx
     python3
+    traceroute
     trash-cli
     tree
     unzip

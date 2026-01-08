@@ -10,6 +10,7 @@
     ./temp.nix
     ./thunar.nix
     ./vm.nix
+    # ./wireguard-temp.nix
     ./yubikey.nix
     ../../services/gitman.nix
     ../../services/polkit.nix

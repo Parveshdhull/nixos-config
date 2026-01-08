@@ -35,6 +35,11 @@ in
         User monu
         Port 22
 
+      Host server2
+        HostName server2.cosmos.vpn
+        User bob
+        Port 22
+
       Host github.com
         User git
     '';

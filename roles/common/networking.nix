@@ -36,6 +36,7 @@ in
       "${hosts.astra}" = [ "astra.cosmos.vpn" ]; # 📡 Celestial messenger — light and fast
       "${hosts.lyra}" = [ "lyra.cosmos.vpn" ]; # 🎶 Harmonic traveler — graceful and portable
       "${hosts.cielo}" = [ "cielo.cosmos.vpn" ]; # ☁️ Open sky — peaceful and connected
+      "${hosts.server2}" = [ "server2.cosmos.vpn" ]; #  - Temp server
     };
   };
 }
