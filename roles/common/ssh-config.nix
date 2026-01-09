@@ -36,7 +36,7 @@ in
         Port 22
 
       Host server2
-        HostName server2.cosmos.vpn
+        HostName ${(import "${secrets}/config").server2-ip}
         User bob
         Port 22
 

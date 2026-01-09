@@ -31,6 +31,7 @@ in
         {
           publicKey = (import "${secrets}/keys").wireguard-server2;
           allowedIPs = [
+            # hosts.server2
             "0.0.0.0/0" # Route whole traffic
           ];
           endpoint = "${serverAddress}:${toString serverPort}";
