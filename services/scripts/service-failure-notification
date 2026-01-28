@@ -8,13 +8,16 @@ mkdir -p "$NOTIFICATION_DIR"
 
 FAILED_SERVICES=$(systemctl --failed | awk '/\.service/ {print $2}')
 
+echo "$FAILED_SERVICES" | grep -q . || exit 0
+
 echo "$FAILED_SERVICES" | while read -r SERVICE_NAME; do
+  [ -z "$SERVICE_NAME" ] && continue
+
 	SERVICE_LOG_FILE="$NOTIFICATION_DIR/$(echo "$SERVICE_NAME" | sed 's/\//_/g').log"
 
 	if [ ! -f "$SERVICE_LOG_FILE" ] || [ "$(cat "$SERVICE_LOG_FILE")" != "$CURRENT_DATE" ]; then
 		MESSAGE="Subject: Service Failure Notification\n\nThe service '$SERVICE_NAME' has failed."
 		echo -e "$MESSAGE" | msmtp "$MY_EMAIL_ADDRESS"
-
 		echo "$CURRENT_DATE" >"$SERVICE_LOG_FILE"
 	fi
 done
