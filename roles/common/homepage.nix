@@ -69,6 +69,11 @@ let
             href = "http://luna.cosmos.vpn:${toString ports.PORT_MEMOS}";
           };
         }
+        {
+          "ChangeDetection" = {
+            href = "http://altair.cosmos.vpn:${toString ports.PORT_CHANGE_DETECTION}";
+          };
+        }
       ];
     }
   ];
