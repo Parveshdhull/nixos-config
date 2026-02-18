@@ -11,5 +11,6 @@
     ./immich.nix
     ./memos.nix
     ./paperless.nix
+    ./readeck.nix
   ];
 }
