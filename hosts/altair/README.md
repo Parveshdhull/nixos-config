@@ -28,19 +28,25 @@
     ```bash
     nix run github:nix-community/nixos-anywhere/<last-release-revision> -- --flake .#altair nixos@altair
     ```
+    Note: hetzner cloud sometime have issues with special characters like (!), so don't use them in disk encryption password
 
-9. Unmount the NixOS minimal environment and reboot the system.
+9. Reboot in NixOS minimal and run
+   ```bash
+   sudo -s
+   passwd
+   cryptsetup luksOpen /dev/sda3 temp_mount
+   mkdir -p /mnt
+   mount /dev/mapper/temp_mount /mnt
+   mkdir -p /mnt/mnt/secrets/keys
+   scp /mnt/secrets/keys/altair root@server-ip: /mnt/mnt/secrets/keys/altair
+   ```
 
-10. Modify `/etc/ssh/ssh_config` to change the user from `nixos` to `monu`.
+10. Unmount the NixOS minimal environment and reboot the system.
 
 11. Connect to Altair via SSH:
     ```bash
     ssh altair
     ```
-
-12. Run `scp /mnt/secrets/keys/altair monu@altair.cosmos.vpn: /mnt/secrets/keys/altair`
-
-13. Rebuild using `nixos-rebuild switch --flake .#altair --target-host monu@altair.cosmos.vpn`
 
 # Checklist (Post - Installation)
 - [ ] Register signal-cli using `signal-cli link`
