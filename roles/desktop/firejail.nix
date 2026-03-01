@@ -15,11 +15,11 @@
           with pkgs;
           {
             inherit
-              brave
               discord
               feh
               flameshot
               librewolf
+              mullvad-browser
               signal-desktop
               simplescreenrecorder
               spotify

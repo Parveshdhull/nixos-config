@@ -29,4 +29,7 @@
     enable = true;
     enableSSHSupport = true;
   };
+
+  # Touch detector
+  programs.yubikey-touch-detector.enable = true;
 }
