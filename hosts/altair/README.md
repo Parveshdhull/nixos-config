@@ -50,3 +50,17 @@
 
 # Checklist (Post - Installation)
 - [ ] Register signal-cli using `signal-cli link`
+
+- [ ] Fix synchthing folder error
+  ```
+  ssh altair
+  su orion
+  sudo mkdir -p /mnt/data
+  sudo chown monu:monu /mnt/data/
+  exit
+  mkdir -p /mnt/data/apps/syncthing
+  rebuild
+  ```
+  update altair synchthing key in nodes
+
+- [ ] Rebuild all hosts with new server-ip, and also update IP for astra wireguard

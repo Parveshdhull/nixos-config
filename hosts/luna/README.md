@@ -3,3 +3,6 @@
 2. `scp /mnt/secrets/keys/luna monu@luna.cosmos.vpn:/mnt/secrets/keys/luna`
 
 3. Rebuild
+
+# Checklist (Post - Installation)
+- [ ] smbpasswd -a monu

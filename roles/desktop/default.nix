@@ -45,6 +45,7 @@
     upower # Check Bluetooth keyboard, mouse battery
     xclip # Required for prowser
     xdotool # Required for keybinding
+    xfce.xfce4-taskmanager
     xorg.xkill
     xorg.xmodmap # Required for emoji keyboard
     zenity # Show popups and calendar

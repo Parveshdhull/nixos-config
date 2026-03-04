@@ -17,3 +17,6 @@
 7. `mount /dev/disk/by-label/data /mnt/data/`
 8. `cp /etc/nixos/hardware-configuration.nix /mnt/data/nebula/nixos-config/hosts/nova/hardware-configuration.nix`
 9. bn
+
+# Checklist (Post - Installation)
+- [ ] smbpasswd -a monu

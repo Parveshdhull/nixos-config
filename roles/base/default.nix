@@ -11,6 +11,7 @@
     ./helpers.nix
     ./janitor.nix
     ./security.nix
+    ./systemd-boot.nix
   ];
 
   nix.settings.experimental-features = [
