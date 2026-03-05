@@ -6,8 +6,5 @@
     # ../../roles/apps/copyparty.nix
     ../../roles/common
     ../../roles/desktop
-    ../../roles/restic
-    ../../roles/ssh.nix
-    ../../roles/wireguard-client.nix
   ];
 }

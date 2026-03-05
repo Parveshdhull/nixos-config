@@ -6,9 +6,7 @@
     ./disk-config.nix
     ../../roles/apps
     ../../roles/common
-    ../../roles/restic
-    ../../roles/ssh.nix
-    ../../roles/wireguard-client.nix
+    # ../../services/alertbot.nix
   ];
 
   fileSystems."/mnt/storagebox-luna" = {

@@ -16,10 +16,6 @@ in
           id = keys.syncthing-nova;
           addresses = [ "tcp://nova.cosmos.vpn:22000" ];
         };
-        altair = {
-          id = keys.syncthing-altair;
-          addresses = [ "tcp://altair.cosmos.vpn:22000" ];
-        };
         luna = {
           id = keys.syncthing-luna;
           addresses = [ "tcp://luna.cosmos.vpn:22000" ];
@@ -47,25 +43,13 @@ in
 
       guiAddress = "${hosts.${hostName}}:${port}";
 
-      allFolders = {
-        "/mnt/data/nebula/sync/sync-all" = {
-          id = "sync-all";
-          type = "sendreceive";
-          devices = otherHosts;
-        };
+      folders = {
         "/mnt/data/nebula/sync/sync-box" = {
           id = "sync-box";
           type = "sendreceive";
-          devices = builtins.filter (h: h != "altair") otherHosts;
+          devices = otherHosts;
         };
       };
-
-      folders =
-        if hostName != "altair" then
-          allFolders
-        else
-          { "/mnt/data/nebula/sync/sync-all" = allFolders."/mnt/data/nebula/sync/sync-all"; };
-
     in
     {
       # Service

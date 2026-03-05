@@ -1,6 +1,10 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ../roles/apps/signal-cli.nix
+    ./signal-cli-monitor.nix
+  ];
   # Alert Bot Service
   systemd.services.alertbot = {
     description = "Alert Bot Service";

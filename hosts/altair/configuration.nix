@@ -4,11 +4,9 @@
   imports = [
     ./disk-config.nix
     ./hardware-configuration.nix
-    ../../roles/common
-    ../../roles/server
-    ../../roles/ssh.nix
-    ../../services/alertbot.nix
-    ../../services/signal-cli-monitor.nix
+    ../../roles/base
+    ../../roles/wireguard/wireguard-server.nix
+    ../../services/initial-setup.nix
   ];
 
   networking.nameservers = [

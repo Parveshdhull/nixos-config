@@ -70,11 +70,6 @@ let
           };
         }
         {
-          "ChangeDetection" = {
-            href = "http://altair.cosmos.vpn:${toString ports.PORT_CHANGE_DETECTION}";
-          };
-        }
-        {
           "Readeck" = {
             href = "http://luna.cosmos.vpn:${toString ports.PORT_READECK}";
           };
