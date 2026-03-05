@@ -8,5 +8,5 @@ chown monu:monu /mnt/data/
 # monu
 runuser -u monu -- mkdir -p /home/monu/{.config,.emacs.d,.gnupg,.local/share} /mnt/data/{apps,nebula/{sync,dotfiles,nixos-config}}
 
-# orion
-runuser -u orion -- mkdir -p /home/orion/{.config,.emacs.d,.gnupg,.local/share}
+# root
+mkdir -p /root/{.config,.emacs.d,.gnupg,.local/share}
