@@ -20,10 +20,10 @@
       pkgs.hostname
       pkgs.openssh
       pkgs.stow
+      pkgs.util-linux # Required for runuser command
     ];
     serviceConfig = {
       ExecStart = "${pkgs.bash}/bin/bash /etc/nebula/scripts/initial-setup";
-      User = "monu";
     };
     wantedBy = [ "multi-user.target" ];
   };

@@ -3,6 +3,10 @@ set -euo pipefail
 
 # Create 'nebula' directory structure
 mkdir -p /mnt/data
-mkdir -p /mnt/data/apps/
-mkdir -p /home/monu/{.config,.emacs.d,.gnupg,.local/share}
-mkdir -p /mnt/data/nebula/{sync,dotfiles,nixos-config}
+chown monu:monu /mnt/data/
+
+# monu
+runuser -u monu -- mkdir -p /home/monu/{.config,.emacs.d,.gnupg,.local/share} /mnt/data/{apps,nebula/{sync,dotfiles,nixos-config}}
+
+# orion
+runuser -u orion -- mkdir -p /home/orion/{.config,.emacs.d,.gnupg,.local/share}

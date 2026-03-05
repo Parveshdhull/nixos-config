@@ -81,11 +81,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1772465433,
-        "narHash": "sha256-ywy9troNEfpgh0Ee+zaV1UTgU8kYBVKtvPSxh6clYGU=",
+        "lastModified": 1772598333,
+        "narHash": "sha256-YaHht/C35INEX3DeJQNWjNaTcPjYmBwwjFJ2jdtr+5U=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "c581273b8d5bdf1c6ce7e0a54da9841e6a763913",
+        "rev": "fabb8c9deee281e50b1065002c9828f2cf7b2239",
         "type": "github"
       },
       "original": {
@@ -109,11 +109,11 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1772608816,
-        "narHash": "sha256-qtu/YXItWkOrRDqZr3JNAKkI2WIr5Js0WD7gFl/rz/A=",
+        "lastModified": 1772697250,
+        "narHash": "sha256-+qxlRtTJ22zGlBJwmNIxRmXrl4l8SHLJyCRo3p4UG50=",
         "ref": "refs/heads/main",
-        "rev": "1e056948b6424eca5d8342b78d4de6ce508529a4",
-        "revCount": 150,
+        "rev": "7eaf392b79ae6a8acdf28892ba30a1a18417f659",
+        "revCount": 151,
         "type": "git",
         "url": "ssh://git@github.com/parveshdhull/nixos-config-secrets"
       },
@@ -159,11 +159,11 @@
     },
     "unstable": {
       "locked": {
-        "lastModified": 1772542754,
-        "narHash": "sha256-WGV2hy+VIeQsYXpsLjdr4GvHv5eECMISX1zKLTedhdg=",
+        "lastModified": 1772624091,
+        "narHash": "sha256-QKyJ0QGWBn6r0invrMAK8dmJoBYWoOWy7lN+UHzW1jc=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "8c809a146a140c5c8806f13399592dbcb1bb5dc4",
+        "rev": "80bdc1e5ce51f56b19791b52b2901187931f5353",
         "type": "github"
       },
       "original": {

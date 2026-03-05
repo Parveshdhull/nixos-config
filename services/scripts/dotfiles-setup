@@ -15,15 +15,17 @@ update_repo() {
     cd "$repo_dir"
 
     if [ ! -d "$repo_dir/.git" ]; then
-        git clone "$repo_url" "$repo_dir"
+        runuser -u monu -- git clone "$repo_url" "$repo_dir"
     else
-        git pull origin main
+        runuser -u monu -- git pull origin main
     fi
 }
 
 DOTFILES_DIR="/mnt/data/nebula/dotfiles"
 update_repo "$DOTFILES_DIR" "${GIT_PROTOCOL}parveshdhull/dotfiles"
-stow --adopt -d "$DOTFILES_DIR" -t /home/monu -S .
+
+runuser -u monu -- stow --adopt -d "$DOTFILES_DIR" -t /home/monu -S .
+runuser -u orion -- stow --adopt -d "$DOTFILES_DIR" -t /home/orion -S .
 
 NIXOS_DIR="/mnt/data/nebula/nixos-config"
 update_repo "$NIXOS_DIR" "${GIT_PROTOCOL}parveshdhull/nixos-config"
