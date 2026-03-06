@@ -32,8 +32,8 @@ in
     wireguard.interfaces.wg0 = {
       ips = [ "${hosts.altair}/24" ];
       listenPort = (import "${secrets}/config/ports.nix").PORT_WIREGUARD;
-      postSetup = "${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -s 10.100.0.0/24 -o eth0 -j MASQUERADE";
-      postShutdown = "${pkgs.iptables}/bin/iptables -t nat -D POSTROUTING -s 10.100.0.0/24 -o eth0 -j MASQUERADE";
+      postSetup = "${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -s 10.100.0.0/24 -o enp0s6 -j MASQUERADE";
+      postShutdown = "${pkgs.iptables}/bin/iptables -t nat -D POSTROUTING -s 10.100.0.0/24 -o enp0s6 -j MASQUERADE";
       privateKeyFile = secret-path "service/wireguard/altair";
 
       peers = [

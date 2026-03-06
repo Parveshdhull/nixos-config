@@ -52,3 +52,6 @@
     ```bash
     ssh altair
     ```
+
+# Checklist
+- [ ] Make sure network interface name in wireguard-server.nix file matches with actual interface name for server.
