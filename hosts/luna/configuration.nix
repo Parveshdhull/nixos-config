@@ -6,7 +6,7 @@
     ./disk-config.nix
     ../../roles/apps
     ../../roles/common
-    # ../../services/alertbot.nix
+    ../../services/alertbot.nix
   ];
 
   fileSystems."/mnt/storagebox-luna" = {
