@@ -29,6 +29,9 @@
     nix run github:nix-community/nixos-anywhere/<last-release-revision> -- --flake .#altair nixos@altair
     ```
     Note: hetzner cloud sometime have issues with special characters like (!), so don't use them in disk encryption password
+    Extra Flags:
+    --generate-hardware-config nixos-generate-config ./hosts/altair/hardware-configuration.nix (For generating hardware config)
+    --build-on remote (For different architectue like aarch64-linux)
 
 9. Reboot in NixOS minimal and run
    ```bash
@@ -40,6 +43,8 @@
    mkdir -p /mnt/mnt/secrets/keys
    scp /mnt/secrets/keys/altair root@server-ip: /mnt/mnt/secrets/keys/altair
    ```
+   or
+   Use hashedPassword instead of file for initial authentication and for uploading age identity key form console
 
 10. Unmount the NixOS minimal environment and reboot the system.
 
@@ -47,20 +52,3 @@
     ```bash
     ssh altair
     ```
-
-# Checklist (Post - Installation)
-- [ ] Register signal-cli using `signal-cli link`
-
-- [ ] Fix synchthing folder error
-  ```
-  ssh altair
-  su orion
-  sudo mkdir -p /mnt/data
-  sudo chown monu:monu /mnt/data/
-  exit
-  mkdir -p /mnt/data/apps/syncthing
-  rebuild
-  ```
-  update altair synchthing key in nodes
-
-- [ ] Rebuild all hosts with new server-ip, and also update IP for astra wireguard

@@ -37,16 +37,14 @@
       snitch,
     }:
     let
+      getSystem = hostname: if hostname == "altair" then "aarch64-linux" else "x86_64-linux";
+
       # Overlay to make `pkgs.unstable` available in configuration
       overlayModule =
         { pkgs, ... }:
         {
           nixpkgs.overlays = [
             (final: prev: {
-              nixpkgs = import nixpkgs {
-                inherit (prev) system;
-                config.allowUnfree = true;
-              };
               unstable = import unstable {
                 inherit (prev) system;
                 config.allowUnfree = true;
@@ -56,36 +54,39 @@
           ];
         };
 
-      # To generate host configurations for all hosts.
       hostnames = builtins.attrNames (builtins.readDir ./hosts);
     in
     {
       nixosConfigurations = builtins.listToAttrs (
-        builtins.map (hostname: {
-          name = hostname;
-          value = nixpkgs.lib.nixosSystem {
-            system = "x86_64-linux";
-            specialArgs = {
-              channels = {
-                inherit nixpkgs unstable agenix;
+        builtins.map (
+          hostname:
+          let
+            system = getSystem hostname;
+          in
+          {
+            name = hostname;
+            value = nixpkgs.lib.nixosSystem {
+              inherit system;
+              specialArgs = {
+                channels = { inherit nixpkgs unstable agenix; };
+                inherit secrets;
               };
-              inherit secrets;
+              modules = [
+                overlayModule
+                disko.nixosModules.disko
+                agenix.nixosModules.default
+                copyparty.nixosModules.default
+                (_: {
+                  environment.systemPackages = [
+                    snitch.packages.${system}.default
+                  ];
+                })
+                ./hosts/${hostname}/configuration.nix
+                (_: { networking.hostName = hostname; })
+              ];
             };
-            modules = [
-              overlayModule
-              disko.nixosModules.disko
-              agenix.nixosModules.default
-              copyparty.nixosModules.default
-              (_: {
-                environment.systemPackages = [
-                  snitch.packages.x86_64-linux.default
-                ];
-              })
-              ./hosts/${hostname}/configuration.nix
-              (_: { networking.hostName = hostname; })
-            ];
-          };
-        }) hostnames
+          }
+        ) hostnames
       );
     };
 }
