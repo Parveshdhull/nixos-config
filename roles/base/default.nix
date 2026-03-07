@@ -11,6 +11,7 @@
     ./helpers.nix
     ./janitor.nix
     ./networking.nix
+    ./samba.nix
     ./security.nix
     ./ssh.nix
     ./systemd-boot.nix

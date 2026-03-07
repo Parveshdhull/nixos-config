@@ -29,7 +29,6 @@ in
 {
   imports = [
     ./age-secrets.nix
-    ./samba.nix
   ];
 
   environment.etc = {

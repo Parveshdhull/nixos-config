@@ -109,11 +109,11 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1772817402,
-        "narHash": "sha256-6mbxVHyNuJ+EM5KUh0xphz1ZgwsG878P0D6/l8MzDkw=",
+        "lastModified": 1772869260,
+        "narHash": "sha256-2TrkCB7Oe5E5nTE7APQLahq/ZfD6sC+WJQ7h1n1Q6NM=",
         "ref": "refs/heads/main",
-        "rev": "bd049d7af16f52c1f2a69efc5fd2824d42ba47c2",
-        "revCount": 154,
+        "rev": "a20577f50103c2fa0b08f79df6cbd707cdc33d79",
+        "revCount": 155,
         "type": "git",
         "url": "ssh://git@github.com/parveshdhull/nixos-config-secrets"
       },
