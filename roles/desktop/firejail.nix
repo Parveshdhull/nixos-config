@@ -30,10 +30,10 @@
           }
         )
       // {
-        telegram-desktop = {
-          executable = "${lib.getBin pkgs.telegram-desktop}/bin/Telegram";
-          profile = "${pkgs.firejail}/etc/firejail/telegram.profile";
-        };
+        # telegram-desktop = {
+        #   executable = "${lib.getBin pkgs.telegram-desktop}/bin/Telegram";
+        #   profile = "${pkgs.firejail}/etc/firejail/telegram.profile";
+        # };
       };
   };
 

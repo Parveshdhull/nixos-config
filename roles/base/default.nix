@@ -18,9 +18,20 @@
     ./users.nix
   ];
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    max-jobs = 4;
+    cores = 2;
+  };
+
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 8 * 1024;
+    }
   ];
 
   nixpkgs.config.allowUnfree = true;
