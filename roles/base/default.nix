@@ -38,6 +38,8 @@
 
   services.locate.enable = true;
 
+  boot.kernelParams = [ "ipv6.disable=1" ];
+
   # https://discourse.nixos.org/t/nixos-rebuild-switch-upgrade-networkmanager-wait-online-service-failure/30746/2
   systemd.services.NetworkManager-wait-online.enable = false;
 
