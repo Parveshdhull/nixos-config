@@ -5,6 +5,7 @@
   ...
 }:
 let
+  hosts = import "${secrets}/config/hosts.nix";
   ports = import "${secrets}/config/ports.nix";
 in
 {
@@ -12,7 +13,16 @@ in
 
   services.adguardhome = {
     enable = true;
-    host = (import "${secrets}/config/hosts.nix").luna;
+    host = hosts.luna;
     port = ports.PORT_ADGUARD;
+    settings = {
+      dns = {
+        bind_hosts = [
+          hosts.localhost
+          hosts.luna-local
+        ];
+        port = ports.PORT_DNS;
+      };
+    };
   };
 }

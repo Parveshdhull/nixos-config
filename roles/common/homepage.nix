@@ -74,6 +74,11 @@ let
             href = "http://luna.cosmos.vpn:${toString ports.PORT_READECK}";
           };
         }
+        {
+          "ChangeDetection" = {
+            href = "http://luna.cosmos.vpn:${toString ports.PORT_CHANGE_DETECTION}";
+          };
+        }
       ];
     }
   ];

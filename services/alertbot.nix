@@ -1,10 +1,10 @@
 { pkgs, secrets, ... }:
 
 {
-  # imports = [
-  #   ../roles/apps/signal-cli.nix
-  #   ./signal-cli-monitor.nix
-  # ];
+  imports = [
+    ../roles/apps/signal-cli.nix
+    ./signal-cli-monitor.nix
+  ];
 
   # Alert Bot Service
   systemd.services.alertbot = {
@@ -19,7 +19,7 @@
       MY_EMAIL_ADDRESS = (import "${secrets}/config").my-email-address;
     };
     serviceConfig = {
-      ExecStart = "/run/current-system/sw/bin/python /home/monu/bin/alertbot -r /mnt/data/nebula/sync/sync-box/notes/pinned/reminders -m email";
+      ExecStart = "/run/current-system/sw/bin/python /home/monu/bin/alertbot -r /mnt/data/nebula/sync/sync-box/notes/pinned/reminders -m signal";
       User = "monu";
       StandardOutput = "journal";
       StandardError = "inherit";

@@ -5,6 +5,7 @@
     ./adguard-home.nix
     ./audiobookshelf.nix
     ./calibre.nix
+    ./changedetection.nix
     ./copyparty.nix
     ./freshrss.nix
     ./grocy.nix
