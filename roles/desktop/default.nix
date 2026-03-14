@@ -26,7 +26,6 @@
     cryptsetup # For disk encryption
     ffmpeg
     gnucash # Todo - migrate to firejail - Profile missing
-    gparted
     ispell # Required for emacs flyspell
     keepassxc # Todo - migrate to firejail - Fix Yubikey Access
     libreoffice
