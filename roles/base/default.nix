@@ -10,6 +10,7 @@
     ./basic-tools.nix
     ./helpers.nix
     ./janitor.nix
+    ./monitor.nix
     ./networking.nix
     ./samba.nix
     ./security.nix

@@ -22,6 +22,8 @@ let
       serviceConfig = {
         TimeoutStopSec = "10800"; # Increase timeout to 3 Hours for cleanup script
         AmbientCapabilities = [ "CAP_DAC_READ_SEARCH" ];
+        CPUQuota = "40%"; # Limit to 40% of one core
+        Nice = 19; # Give it the lowest priority
       };
     };
   }) currentBackups;

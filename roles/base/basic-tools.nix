@@ -21,7 +21,6 @@
     tree
     unzip
     vim
-    unstable.witr
     wget
   ];
 }

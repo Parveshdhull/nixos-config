@@ -17,20 +17,28 @@ let
     ;
 
   novaBackup =
-    name: repository:
+    {
+      name,
+      repository,
+      time,
+    }:
     makeBackup {
       inherit name;
       inherit repository;
-      time = "13:00";
+      inherit time;
       paths = [ "/mnt/data/nebula/" ];
     };
 
   lunaBackup =
-    name: repository:
+    {
+      name,
+      repository,
+      time,
+    }:
     makeBackup {
       inherit name;
       inherit repository;
-      time = "13:05";
+      inherit time;
       paths = [
         "/mnt/data/apps"
         "/var/lib"
@@ -41,18 +49,42 @@ let
 
   hostBackups = {
     "luna" = {
-      "storagebox-altair" = lunaBackup "storagebox-altair" storageConfig.storagebox-altair;
-      "storagebox-luna" = lunaBackup "storagebox-luna" storageConfig.storagebox-luna;
-      "storagebox-nova" = lunaBackup "storagebox-nova" storageConfig.storagebox-nova;
+      "storagebox-altair" = lunaBackup {
+        name = "storagebox-altair";
+        repository = storageConfig.storagebox-altair;
+        time = "12:00";
+      };
+      "storagebox-luna" = lunaBackup {
+        name = "storagebox-luna";
+        repository = storageConfig.storagebox-luna;
+        time = "13:00";
+      };
+      "storagebox-nova" = lunaBackup {
+        name = "storagebox-nova";
+        repository = storageConfig.storagebox-nova;
+        time = "14:00";
+      };
     };
     "nova" = {
-      "storagebox-altair" = novaBackup "storagebox-altair" storageConfig.storagebox-altair;
-      "storagebox-luna" = novaBackup "storagebox-luna" storageConfig.storagebox-luna;
-      "storagebox-nova" = novaBackup "storagebox-nova" storageConfig.storagebox-nova;
+      "storagebox-altair" = novaBackup {
+        name = "storagebox-altair";
+        repository = storageConfig.storagebox-altair;
+        time = "13:00";
+      };
+      "storagebox-luna" = novaBackup {
+        name = "storagebox-luna";
+        repository = storageConfig.storagebox-luna;
+        time = "13:30";
+      };
+      "storagebox-nova" = novaBackup {
+        name = "storagebox-nova";
+        repository = storageConfig.storagebox-nova;
+        time = "12:00";
+      };
       "mega" = makeBackup {
         repository = storageConfig.storagebox-mega;
         name = "mega";
-        time = "13:00";
+        time = "12:30";
         paths = [
           "/mnt/data/nebula/important/creds"
           "/mnt/data/nebula/sync/sync-box/creds/"
