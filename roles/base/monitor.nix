@@ -13,14 +13,22 @@ let
 in
 {
   age.secrets =
-    if hostName == "luna" then
-      {
+    let
+      agentSecrets = {
+        "service/beszel/agent" = {
+          file = "${secrets}/agenix/service/beszel/agent.age";
+        };
+      };
+    in
+    if config.networking.hostName == "luna" then
+      agentSecrets
+      // {
         "service/beszel/hub" = {
           file = "${secrets}/agenix/service/beszel/hub.age";
         };
       }
     else
-      { };
+      agentSecrets;
 
   environment.systemPackages = with pkgs; [
     lm_sensors
@@ -28,9 +36,9 @@ in
   ];
 
   services.beszel.agent = {
-    enable = hostName == "luna";
+    enable = true;
     smartmon.enable = true;
-    environmentFile = secret-path "service/beszel/hub";
+    environmentFile = secret-path "service/beszel/agent";
   };
 
   services.beszel.hub = {
