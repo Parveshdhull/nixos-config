@@ -79,6 +79,11 @@ let
             href = "http://luna.cosmos.vpn:${toString ports.PORT_CHANGE_DETECTION}";
           };
         }
+        {
+          "Beszel" = {
+            href = "http://luna.cosmos.vpn:${toString ports.PORT_BESZEL}";
+          };
+        }
       ];
     }
   ];
