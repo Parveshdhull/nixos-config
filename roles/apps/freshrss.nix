@@ -20,4 +20,13 @@
     dataDir = "/mnt/data/apps/freshrss";
     passwordFile = secret-path "service/freshrss/pass";
   };
+
+  # Override freshrss-updater timer
+  systemd.timers."freshrss-updater" = {
+    timerConfig = {
+      OnCalendar = lib.mkForce "hourly";
+      RandomizedDelaySec = "5m";
+      Persistent = true;
+    };
+  };
 }
