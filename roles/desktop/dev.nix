@@ -1,6 +1,10 @@
 { lib, pkgs, ... }:
 
 {
+  imports = [
+    # ./hubble-bridge.nix # Only needed once, don't need anymore
+  ];
+
   environment.systemPackages = with pkgs; [
     android-tools
     # gpick # color picker
