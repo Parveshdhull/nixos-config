@@ -10,11 +10,6 @@ in
 {
   programs.ssh = {
     extraConfig = ''
-      Host nova
-        HostName nova.cosmos.vpn
-        User monu
-        Port ${opensshPort}
-
       Host luna
         HostName luna.cosmos.vpn
         User monu
@@ -23,11 +18,6 @@ in
       Host altair
         HostName altair.cosmos.vpn
         User monu
-        Port ${opensshPort}
-
-      Host localhost
-        HostName localhost
-        User orion
         Port ${opensshPort}
 
       Host lyra

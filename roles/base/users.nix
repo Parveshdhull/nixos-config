@@ -11,12 +11,12 @@ let
   sshKeys = [ users.orion ];
 in
 {
-  age.secrets."hosts/users/monu/pass-hash" = {
-    file = "${secrets}/agenix/hosts/users/monu/pass-hash.age";
+  age.secrets."users/monu/pass-hash" = {
+    file = "${secrets}/agenix/users/monu/pass-hash.age";
   };
 
-  age.secrets."hosts/users/orion/pass-hash" = {
-    file = "${secrets}/agenix/hosts/users/orion/pass-hash.age";
+  age.secrets."users/orion/pass-hash" = {
+    file = "${secrets}/agenix/users/orion/pass-hash.age";
   };
 
   users = {
@@ -38,7 +38,7 @@ in
         isNormalUser = true;
         useDefaultShell = true;
         group = "monu";
-        hashedPasswordFile = "${secret-path "hosts/users/monu/pass-hash"}";
+        hashedPasswordFile = "${secret-path "users/monu/pass-hash"}";
         extraGroups = [
           "networkmanager"
         ];
@@ -47,9 +47,9 @@ in
 
       orion = {
         uid = 1001;
-        group = "monu";
+        group = "orion";
         isNormalUser = true;
-        hashedPasswordFile = "${secret-path "hosts/users/orion/pass-hash"}";
+        hashedPasswordFile = "${secret-path "users/orion/pass-hash"}";
         extraGroups = [
           "wheel"
         ];

@@ -43,5 +43,8 @@
   };
 
   # Enable the u2f PAM module for su
-  security.pam.services.su.u2fAuth = true;
+  security.pam.services = {
+    su.u2fAuth = true;
+    sudo.u2fAuth = true;
+  };
 }

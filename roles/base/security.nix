@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  config,
   channels,
   ...
 }:
@@ -12,7 +13,7 @@
   networking.enableIPv6 = false;
   services.fail2ban.enable = true;
 
-  security.sudo.wheelNeedsPassword = false;
+  security.sudo.wheelNeedsPassword = if config.networking.hostName == "nova" then true else false;
 
   # https://xeiaso.net/blog/paranoid-nixos-2021-07-18/
   nix.settings.allowed-users = [ "@wheel" ];
