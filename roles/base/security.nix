@@ -12,10 +12,7 @@
   networking.enableIPv6 = false;
   services.fail2ban.enable = true;
 
-  security = {
-    pam.sshAgentAuth.enable = true;
-    sudo.wheelNeedsPassword = false;
-  };
+  security.sudo.wheelNeedsPassword = false;
 
   # https://xeiaso.net/blog/paranoid-nixos-2021-07-18/
   nix.settings.allowed-users = [ "@wheel" ];

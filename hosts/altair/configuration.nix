@@ -6,6 +6,7 @@
     ./hardware-configuration.nix
     ../../roles/base
     ../../roles/wireguard/wireguard-server.nix
+    ../../roles/sshd.nix
     ../../services/initial-setup.nix
   ];
 

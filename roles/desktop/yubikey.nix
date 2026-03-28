@@ -2,13 +2,18 @@
   lib,
   pkgs,
   secrets,
+  secret-path,
   ...
 }:
 
 {
+  age.secrets."service/u2f/authfile" = {
+    file = "${secrets}/agenix/service/u2f/authfile.age";
+    owner = "root";
+    mode = "644";
+  };
 
   users.users.monu.packages = [
-    pkgs.ccid
     pkgs.opensc
     pkgs.yubikey-manager
   ];
@@ -18,11 +23,8 @@
     pkgs.libu2f-host
   ];
 
-  # When enabled gpg sometime don't detect device or detects after significant delay
-  services.pcscd.enable = false; # Change to true when changing touch policy etc. for openpgp key
-
-  # Necessary for GPG Agent.
-  hardware.gpgSmartcards.enable = true; # Doesn't work pcscd is enabled
+  hardware.gpgSmartcards.enable = true;
+  services.pcscd.enable = true;
 
   # GPG and SSH
   programs.gnupg.agent = {
@@ -32,4 +34,14 @@
 
   # Touch detector
   programs.yubikey-touch-detector.enable = true;
+
+  # Enable U2F
+  security.pam.u2f = {
+    enable = true;
+    control = "sufficient";
+    settings.authfile = secret-path "service/u2f/authfile";
+  };
+
+  # Enable the u2f PAM module for su
+  security.pam.services.su.u2fAuth = true;
 }

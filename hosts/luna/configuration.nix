@@ -6,6 +6,7 @@
     ./disk-config.nix
     ../../roles/apps
     ../../roles/common
+    ../../roles/sshd.nix
     ../../services/alertbot.nix
   ];
 

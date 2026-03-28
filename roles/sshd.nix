@@ -18,9 +18,6 @@ in
       {
         addr = "${hosts.${hostName}}";
       }
-      {
-        addr = "localhost";
-      }
     ];
     settings = {
       PasswordAuthentication = false;
