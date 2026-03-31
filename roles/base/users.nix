@@ -25,10 +25,6 @@ in
         gid = 1000;
         name = "monu";
       };
-      orion = {
-        gid = 1001;
-        name = "orion";
-      };
     };
 
     users = {
@@ -47,7 +43,7 @@ in
 
       orion = {
         uid = 1001;
-        group = "orion";
+        group = "monu";
         isNormalUser = true;
         hashedPasswordFile = "${secret-path "users/orion/pass-hash"}";
         extraGroups = [
