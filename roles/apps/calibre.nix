@@ -7,6 +7,7 @@
 {
   services.calibre-web = {
     enable = true;
+    package = pkgs.unstable.calibre-web;
     listen.ip = (import "${secrets}/config/hosts.nix").luna;
     listen.port = (import "${secrets}/config/ports.nix").PORT_CALIBRE_WEB;
     options = {

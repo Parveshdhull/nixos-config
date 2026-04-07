@@ -40,6 +40,7 @@
     shfmt
     silver-searcher
     sxiv
+    opensnitch-ui
     terminator
     upower # Check Bluetooth keyboard, mouse battery
     xclip # Required for prowser
@@ -53,6 +54,7 @@
   services = {
     emacs.enable = true;
     upower.enable = true;
+    opensnitch.enable = true;
     physlock = {
       enable = true;
       allowAnyUser = true;
