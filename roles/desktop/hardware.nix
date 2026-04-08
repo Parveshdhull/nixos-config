@@ -9,6 +9,7 @@
   services.pipewire.enable = false;
   services.pulseaudio.enable = true;
   hardware = {
+    graphics.enable = true;
     # Enable Bluetooth
     bluetooth.enable = true;
     bluetooth.powerOnBoot = true;

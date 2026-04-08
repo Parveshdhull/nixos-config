@@ -15,7 +15,7 @@
     ../../roles/desktop/i3.nix
     ../../roles/desktop/thunar.nix
     ../../roles/wireguard/wireguard-temp.nix
-    "${secrets}/hubble"
+    "${secrets}/hosts/hubble"
   ];
 
   # base/default.nix

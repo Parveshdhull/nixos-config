@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, secrets, ... }:
 
 {
   imports = [
@@ -6,5 +6,6 @@
     # ../../roles/apps/copyparty.nix
     ../../roles/common
     ../../roles/desktop
+    "${secrets}/hosts/nova"
   ];
 }
