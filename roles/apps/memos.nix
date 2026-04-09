@@ -14,7 +14,6 @@ in
   services.memos = {
     enable = true;
     dataDir = "/mnt/data/apps/memos";
-    package = pkgs.unstable.memos;
     settings = {
       MEMOS_MODE = "prod";
       MEMOS_ADDR = host;
