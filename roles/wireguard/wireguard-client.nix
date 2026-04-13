@@ -13,9 +13,6 @@ let
   hosts = import "${secrets}/config/hosts.nix";
   serverAddress = (import "${secrets}/config").server-ip;
   serverPort = (import "${secrets}/config/ports.nix").PORT_WIREGUARD;
-
-  routeAddress = "192.168.1.1";
-  interfaceName = "enp7s0";
   ip = hosts.${hostName};
 in
 {
@@ -27,11 +24,9 @@ in
       ips = [ "${ip}/24" ];
       listenPort = serverPort;
       privateKeyFile = secret-path "service/wireguard.${hostName}";
-      # https://wiki.archlinux.org/index.php/WireGuard#Loop_routing
-      postSetup = "ip link show ${interfaceName} &> /dev/null && ip route add ${serverAddress} via ${routeAddress} dev ${interfaceName} || true";
       peers = [
         {
-          publicKey = (import "${secrets}/keys").wireguard-altair; # Altair
+          publicKey = keys.wireguard-altair; # Altair
           allowedIPs = [
             hosts.altair
             # hosts.nova
