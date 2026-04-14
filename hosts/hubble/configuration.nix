@@ -18,6 +18,14 @@
     "${secrets}/hosts/hubble"
   ];
 
+  environment.systemPackages = with pkgs; [
+    libxcvt
+    rofi
+    terminator
+    xclip
+    xdotool
+  ];
+
   # base/default.nix
   nix.settings.experimental-features = [
     "nix-command"

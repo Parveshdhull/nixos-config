@@ -26,8 +26,8 @@ in
         {
           publicKey = keys.wireguard-server2;
           allowedIPs = [
-            "0.0.0.0/0" # Route whole traffic
-            # hosts.server2
+            # "0.0.0.0/0" # Route whole traffic
+            hosts.server2
           ];
           endpoint = "${serverAddress}:${toString serverPort}";
           persistentKeepalive = 10;
