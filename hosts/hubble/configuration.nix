@@ -19,11 +19,15 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    appimage-run
+    binutils # Strings package
     libxcvt
     rofi
+    silver-searcher
     terminator
     xclip
     xdotool
+    xorg.xkill
   ];
 
   # base/default.nix

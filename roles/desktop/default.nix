@@ -39,6 +39,7 @@
     rofi
     shfmt
     silver-searcher
+    stretchly
     sxiv
     opensnitch-ui
     terminator
@@ -53,8 +54,8 @@
 
   services = {
     emacs.enable = true;
-    upower.enable = true;
     opensnitch.enable = true;
+    upower.enable = true;
     physlock = {
       enable = true;
       allowAnyUser = true;
