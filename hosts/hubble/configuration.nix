@@ -19,7 +19,6 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    appimage-run
     binutils # Strings package
     libxcvt
     rofi

@@ -14,6 +14,7 @@
     gnupg
     imagemagick
     ncdu
+    net-tools
     numlockx
     python3
     traceroute

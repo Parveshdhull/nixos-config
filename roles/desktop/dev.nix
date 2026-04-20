@@ -14,5 +14,9 @@
     # typescript
     # typescript-language-server
     # vscode
+
+    ## C
+    # gcc
+    # gdb
   ];
 }
