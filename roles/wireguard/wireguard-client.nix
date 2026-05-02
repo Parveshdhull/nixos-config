@@ -44,12 +44,12 @@ in
           persistentKeepalive = 10;
           endpoint = "${hosts.nova-local}:${toString serverPort}";
         }
-        # {
-        #   publicKey = keys.wireguard-lyra;
-        #   allowedIPs = [ "${hosts.lyra}/32" ];
-        #   persistentKeepalive = 10;
-        #   endpoint = "${hosts.lyra-local}:${toString serverPort}";
-        # }
+        {
+          publicKey = keys.wireguard-lyra;
+          allowedIPs = [ "${hosts.lyra}/32" ];
+          persistentKeepalive = 10;
+          endpoint = "${hosts.lyra-local}:${toString serverPort}";
+        }
         {
           publicKey = keys.wireguard-luna;
           allowedIPs = [ "${hosts.luna}/32" ];
